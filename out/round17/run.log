@@ -1,0 +1,252 @@
+=== screen: 220 jobs, 10 workers ===
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+train 60 test 40
+=== train grid: 2880 jobs, 10 workers ===
+  400/2880 (214s)
+  800/2880 (442s)
+  1200/2880 (648s)
+  1600/2880 (869s)
+  2000/2880 (1031s)
+  2400/2880 (1192s)
+  2800/2880 (1350s)
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+fixed rule F = (0.03, -40.0, 0.1) 
+reactive order = [(0.03, -40.0, 0.1), (-0.06, -40.0, 0.1), (0.06, -40.0, 0.25)] 
+guards (N) = {'(0.03, -40.0, 0.1)': 50.099940153332376, '(-0.06, -40.0, 0.1)': 86.2324066356514, '(0.06, -40.0, 0.25)': 56.45716675999157}
+   (0.03, -40.0, 0.1)  median harm 0.00  mean 3.28  GH shear 44.2  completion 90%
+   (0.06, -40.0, 0.25)  median harm 0.00  mean 3.98  GH shear 65.2  completion 90%
+   (0.0, -40.0, 0.25)  median harm 0.00  mean 5.00  GH shear 107.1  completion 92%
+   (-0.03, -40.0, 0.25)  median harm 0.00  mean 6.64  GH shear 112.2  completion 92%
+   (0.03, -40.0, 0.25)  median harm 0.00  mean 7.07  GH shear 77.2  completion 92%
+   (-0.06, -40.0, 0.1)  median harm 0.00  mean 11.23  GH shear 69.2  completion 90%
+=== test_truth: 1920 jobs, 10 workers ===
+  400/1920 (161s)
+  800/1920 (295s)
+  1200/1920 (438s)
+  1600/1920 (583s)
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+=== test_guard: 120 jobs, 10 workers ===
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+=== test_copy: 7680 jobs, 10 workers ===
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 113, in spawn_main
+    new_handle = reduction.duplicate(pipe_handle,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\reduction.py", line 79, in duplicate
+    return _winapi.DuplicateHandle(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 存取被拒。
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\connection.py", line 979, in rebuild_pipe_connection
+    handle = dh.detach()
+             ^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\reduction.py", line 131, in detach
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 113, in spawn_main
+    return _winapi.DuplicateHandle(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 存取被拒。
+    new_handle = reduction.duplicate(pipe_handle,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\reduction.py", line 79, in duplicate
+    return _winapi.DuplicateHandle(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 存取被拒。
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 113, in spawn_main
+    new_handle = reduction.duplicate(pipe_handle,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\reduction.py", line 79, in duplicate
+    return _winapi.DuplicateHandle(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 存取被拒。
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 113, in spawn_main
+    new_handle = reduction.duplicate(pipe_handle,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\reduction.py", line 79, in duplicate
+    return _winapi.DuplicateHandle(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 存取被拒。
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 113, in spawn_main
+    new_handle = reduction.duplicate(pipe_handle,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\reduction.py", line 79, in duplicate
+    return _winapi.DuplicateHandle(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 存取被拒。
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\connection.py", line 979, in rebuild_pipe_connection
+    handle = dh.detach()
+             ^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\reduction.py", line 131, in detach
+    return _winapi.DuplicateHandle(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 存取被拒。
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 113, in spawn_main
+    new_handle = reduction.duplicate(pipe_handle,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\reduction.py", line 79, in duplicate
+    return _winapi.DuplicateHandle(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 存取被拒。
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\connection.py", line 979, in rebuild_pipe_connection
+    handle = dh.detach()
+             ^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\reduction.py", line 131, in detach
+    return _winapi.DuplicateHandle(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 存取被拒。
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\connection.py", line 979, in rebuild_pipe_connection
+    handle = dh.detach()
+             ^^^^^^^^^^^
+  File "C:\Users\maurice\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\multiprocessing\reduction.py", line 131, in detach
+    return _winapi.DuplicateHandle(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 存取被拒。
+exists, skipping C:\Users\maurice\Desktop\robotic_research\wm_other\out\round17\test_truth.json
+exists, skipping C:\Users\maurice\Desktop\robotic_research\wm_other\out\round17\test_guard.json
+=== test_copy: 7680 jobs, 14 workers ===
+  400/7680 (58s)
+  800/7680 (155s)
+  1200/7680 (293s)
+  1600/7680 (445s)
+  2000/7680 (588s)
+  2400/7680 (702s)
+  2800/7680 (812s)
+  3200/7680 (926s)
+  3600/7680 (1046s)
+  4000/7680 (1152s)
+  4400/7680 (1255s)
+  4800/7680 (1363s)
+  5200/7680 (1499s)
+  5600/7680 (1629s)
+  6000/7680 (1762s)
+  6400/7680 (1898s)
+  6800/7680 (2041s)
+  7200/7680 (2164s)
+  7600/7680 (2286s)
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+exists, skipping C:\Users\maurice\Desktop\robotic_research\wm_other\out\round17\test_truth.json
+exists, skipping C:\Users\maurice\Desktop\robotic_research\wm_other\out\round17\test_guard.json
+=== test_copy: 7680 jobs, 14 workers ===
+  400/7680 (80s)
+  800/7680 (117s)
+  1200/7680 (155s)
+  1600/7680 (196s)
+  2000/7680 (237s)
+  2400/7680 (275s)
+  2800/7680 (312s)
+  3200/7680 (347s)
+  3600/7680 (383s)
+  4000/7680 (423s)
+  4400/7680 (462s)
+  4800/7680 (503s)
+  5200/7680 (544s)
+  5600/7680 (596s)
+  6000/7680 (643s)
+  6400/7680 (681s)
+  6800/7680 (722s)
+  7200/7680 (761s)
+  7600/7680 (796s)
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs

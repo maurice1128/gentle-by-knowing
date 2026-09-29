@@ -1,0 +1,21 @@
+test persons 40 (22 with a restricted joint); F = (0.03, -40.0, 0.1); reactive order [(0.03, -40.0, 0.1), (-0.06, -40.0, 0.1), (0.06, -40.0, 0.25)]
+
+arm                      done harm median    mean     p90 pain-free GH shear   time
+F fixed rule            34/40        0.00    3.96    8.28       75%     42.4   1.84
+R reactive              35/40        0.00    4.52    9.46       75%     42.9   1.84
+M record +-0 deg        34/40        0.00    4.05    8.28       75%     41.3   1.84
+M record +-4 deg        34/40        0.00    3.96    8.28       75%     42.4   1.84
+M record +-8 deg        34/40        0.00    3.96    8.28       75%     42.4   1.84
+M record +-16 deg       34/40        0.00    3.96    8.28       75%     42.4   1.84
+O oracle                38/40        0.00    2.76    1.71       82%     15.0   1.50
+
+paired differences (negative = first arm gentler / faster)
+H17-1 M record +-8 deg - F fixed rule: harm    +0.00 [   +0.00,   +0.00] 0 | GH shear    -0.26 [   -0.79,   +0.28] 0 | time    -0.02 [   -0.07,   +0.03] 0 | done 34 vs 34 -> NOT SUPPORTED
+H17-2 M record +-8 deg - R reactive: harm    -0.56 [   -1.37,   +0.25] 0 | GH shear    -1.86 [   -8.29,   +4.57] 0 | time    -0.66 [   -1.24,   -0.08] - | done 34 vs 35 -> NOT SUPPORTED
+H17-3 tolerance curve (harm, M - F):
+   record error    0 deg:    +0.09 [   -0.10,   +0.29] 0
+   record error    4 deg:    +0.00 [   +0.00,   +0.00] 0
+   record error    8 deg:    +0.00 [   +0.00,   +0.00] 0
+   record error   16 deg:    +0.00 [   +0.00,   +0.00] 0
+H17-4 restricted persons only (n=22): M5 - F harm    +0.00 [   +0.00,   +0.00] 0 | M5 - R harm    -1.02 [   -2.47,   +0.43] 0
+H17-5 gap to the oracle: M5 - O harm    +1.20 [   -0.13,   +2.53] 0

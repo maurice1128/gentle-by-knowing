@@ -1,0 +1,86 @@
+Route A analyses on existing data (no new simulation).  EXPLORATORY: the
+
+==== (1) abstention trade-off, dev set, 160 persons; model = population body + record (4 deg error), no probing ====
+reference: fixed rule harmful 61, safe 94 | reactive harmful 61, safe 97 | a safe completion exists for 125
+margin abstain if over | harmful  safe abstain | right (F would harm) wasted (safe existed)
+   0.0          always |      40    87      30 |                   21                    12
+   0.0         0.0 deg |      40    87      30 |                   21                    12
+   0.0         1.5 deg |      47    88      21 |                   14                     8
+   0.0         3.0 deg |      52    89      13 |                   10                     4
+   0.0         6.0 deg |      62    90       2 |                    2                     0
+   0.0           never |      64    90       0 |                    0                     0
+   1.5          always |      32    84      41 |                   28                    19
+   1.5         0.0 deg |      32    84      41 |                   28                    19
+   1.5         1.5 deg |      36    90      30 |                   21                    12
+   1.5         3.0 deg |      43    91      21 |                   14                     8
+   1.5         6.0 deg |      53    93       7 |                    7                     1
+   1.5           never |      60    93       0 |                    0                     0
+   3.0          always |      26    77      54 |                   35                    28
+   3.0         0.0 deg |      26    77      54 |                   35                    28
+   3.0         1.5 deg |      32    84      41 |                   28                    19
+   3.0         3.0 deg |      36    90      30 |                   21                    12  <- round-19 frozen rule
+   3.0         6.0 deg |      48    92      13 |                   10                     4
+   3.0           never |      60    93       0 |                    0                     0
+   4.5          always |      18    72      67 |                   41                    36
+   4.5         0.0 deg |      18    72      67 |                   41                    36
+   4.5         1.5 deg |      23    77      54 |                   35                    28
+   4.5         3.0 deg |      29    84      41 |                   28                    19
+   4.5         6.0 deg |      40    91      21 |                   14                     8
+   4.5           never |      57    93       0 |                    0                     0
+   6.0          always |      12    66      79 |                   45                    45
+   6.0         0.0 deg |      12    66      79 |                   45                    45
+   6.0         1.5 deg |      16    74      67 |                   41                    36
+   6.0         3.0 deg |      21    79      54 |                   35                    28
+   6.0         6.0 deg |      31    92      30 |                   21                    12
+   6.0           never |      55    95       0 |                    0                     0
+
+==== (2) judge before vs feel during, dev set ====
+harmed by both 34, only by reactive 27, only by model 2
+  only reactive: types {'S': 13, 'E': 5, 'SE': 9}; harm reactive mean 19.2 / model 0.0
+  only model   : types {'S': 1, 'E': 1}; harm reactive mean 0.2 / model 2.0
+  both         : types {'S': 6, 'E': 19, 'SE': 9}; harm reactive mean 8.3 / model 14.0
+reactive harmful outcomes 61: in 61 the joint was already loaded (>= 0.5 N m) during the FIRST attempt, before any switch
+worst 10% under the fixed rule (n=16): mean harm fixed 47.3 | reactive 25.6 | model 12.1; model abstained on 11
+model abstentions 30: reactive outcome on those persons -> harmful 21, safe 8, mean harm 16.8
+
+==== (1) abstention trade-off, confirmation set, 120 persons; model = population body + record (4 deg error), no probing ====
+reference: fixed rule harmful 41, safe 70 | reactive harmful 42, safe 76 | a safe completion exists for 96
+margin abstain if over | harmful  safe abstain | right (F would harm) wasted (safe existed)
+   0.0          always |      24    64      26 |                   16                    14
+   0.0         0.0 deg |      24    64      26 |                   16                    14
+   0.0         1.5 deg |      30    66      16 |                   12                     7
+   0.0         3.0 deg |      35    66      10 |                    8                     5
+   0.0         6.0 deg |      36    68       6 |                    6                     2
+   0.0           never |      42    68       0 |                    0                     0
+   1.5          always |      19    64      30 |                   19                    17
+   1.5         0.0 deg |      19    64      30 |                   19                    17
+   1.5         1.5 deg |      20    67      26 |                   16                    14
+   1.5         3.0 deg |      26    69      16 |                   12                     7
+   1.5         6.0 deg |      31    70       8 |                    8                     3
+   1.5           never |      38    71       0 |                    0                     0
+   3.0          always |      17    59      39 |                   23                    24
+   3.0         0.0 deg |      17    59      39 |                   23                    24
+   3.0         1.5 deg |      20    63      30 |                   19                    17
+   3.0         3.0 deg |      21    66      26 |                   16                    14  <- round-19 frozen rule
+   3.0         6.0 deg |      32    68      10 |                    8                     5
+   3.0           never |      39    70       0 |                    0                     0
+   4.5          always |      17    54      44 |                   24                    28
+   4.5         0.0 deg |      17    54      44 |                   24                    28
+   4.5         1.5 deg |      18    58      39 |                   23                    24
+   4.5         3.0 deg |      21    62      30 |                   19                    17
+   4.5         6.0 deg |      28    67      16 |                   12                     7
+   4.5           never |      40    69       0 |                    0                     0
+   6.0          always |      14    54      48 |                   27                    30
+   6.0         0.0 deg |      14    54      48 |                   27                    30
+   6.0         1.5 deg |      17    55      44 |                   24                    28
+   6.0         3.0 deg |      18    59      39 |                   23                    24
+   6.0         6.0 deg |      22    66      26 |                   16                    14
+   6.0           never |      40    70       0 |                    0                     0
+
+==== (2) judge before vs feel during, confirmation set ====
+harmed by both 21, only by reactive 21, only by model 0
+  only reactive: types {'S': 8, 'E': 4, 'SE': 9}; harm reactive mean 22.5 / model 0.0
+  both         : types {'S': 3, 'E': 13, 'SE': 5}; harm reactive mean 8.9 / model 9.9
+reactive harmful outcomes 42: in 41 the joint was already loaded (>= 0.5 N m) during the FIRST attempt, before any switch
+worst 10% under the fixed rule (n=12): mean harm fixed 48.6 | reactive 37.8 | model 6.5; model abstained on 10
+model abstentions 26: reactive outcome on those persons -> harmful 16, safe 10, mean harm 17.1

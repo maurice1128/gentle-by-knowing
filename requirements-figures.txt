@@ -1,0 +1,9 @@
+# Plotting / offline-analysis environment (the author's .venv_mm): make_figure_forceguard.py,
+# make_figure_ladder.py, make_figure_forest.py, sensitivity_threshold.py, posthoc_baselines.py,
+# audit_claims.py, make_figure_scene.py compose, make_web_videos_gentle.py compose (+ ffmpeg on PATH).
+# Python 3.11.15. The analyses do not import MuJoCo or MyoSuite; mujoco is needed only because
+# make_figure_scene.py imports it at module level (the 'compose' step itself does not simulate).
+numpy==1.26.4
+matplotlib==3.11.0
+pillow==12.3.0
+mujoco==3.10.0

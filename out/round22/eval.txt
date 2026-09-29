@@ -1,0 +1,66 @@
+round 22 : 9336 episodes, 0 errors; part A 120 persons, part B 600 persons; F = (0.03, -40.0, 0.1)
+
+=== part A, condition hard (n=120) ===
+
+  arm             safe  harmful  abstain    mean     p90
+  F                 70       48        0    5.90   22.66
+  M                 69       28       22    1.56    3.77
+  S_C (3.5)         68       29       21    3.45   12.43
+  R x0.6p95         44       44        0    2.94   13.55
+  R x0.8p95         50       46        0    4.37   19.13
+  R x1.0p95         65       48        0    5.46   21.43
+  R x1.2p95         71       49        0    6.35   23.14
+  R - F R x0.6p95    harmful rate    -0.03 [   -0.08,   +0.01] 0  harmed-in-first-attempt 43/44
+  R - F R x0.8p95    harmful rate    -0.02 [   -0.05,   +0.02] 0  harmed-in-first-attempt 45/46
+  R - F R x1.0p95    harmful rate    +0.00 [   -0.02,   +0.02] 0  harmed-in-first-attempt 46/48
+  R - F R x1.2p95    harmful rate    +0.01 [   -0.01,   +0.03] 0  harmed-in-first-attempt 48/49
+  [hard, same persons] M - F    -0.17 [   -0.25,   -0.08] -, safe 69 vs 70; Spearman median 0.10 (n=56)
+
+=== part A, condition soft6 (n=120) ===
+
+  arm             safe  harmful  abstain    mean     p90
+  F                 63       56        0    4.64   15.53
+  M                 66       31       22    1.33    4.06
+  S_C (3.5)         61       37       21    2.55    9.34
+  R x0.6p95         38       51        0    2.16    8.34
+  R x0.8p95         44       52        0    3.45   13.27
+  R x1.0p95         59       54        0    4.07   13.28
+  R x1.2p95         64       56        0    4.87   14.01
+  R - F R x0.6p95    harmful rate    -0.04 [   -0.08,   -0.00] -  harmed-in-first-attempt 51/51
+  R - F R x0.8p95    harmful rate    -0.03 [   -0.07,   +0.00] 0  harmed-in-first-attempt 52/52
+  R - F R x1.0p95    harmful rate    -0.02 [   -0.04,   +0.01] 0  harmed-in-first-attempt 54/54
+  R - F R x1.2p95    harmful rate    +0.00 [   +0.00,   +0.00] 0  harmed-in-first-attempt 56/56
+  H22-1 [soft6] force guard useless at every threshold: SUPPORTED
+  H22-2 [soft6] M - F harmful rate    -0.21 [   -0.29,   -0.13] -, safe 66 vs 63 -> SUPPORTED
+  H22-3 [soft6] Spearman(force, load) median 0.30 (n=59) -> SUPPORTED
+
+=== part A, condition soft12 (n=120) ===
+
+  arm             safe  harmful  abstain    mean     p90
+  F                 52       67        0    5.67   18.67
+  M                 54       43       22    2.06    5.59
+  S_C (3.5)         50       48       21    3.35   11.36
+  R x0.6p95         34       66        0    2.90    9.90
+  R x0.8p95         39       67        0    4.09   12.56
+  R x1.0p95         50       67        0    5.09   14.93
+  R x1.2p95         53       67        0    5.73   18.68
+  R - F R x0.6p95    harmful rate    -0.01 [   -0.03,   +0.01] 0  harmed-in-first-attempt 66/66
+  R - F R x0.8p95    harmful rate    +0.00 [   +0.00,   +0.00] 0  harmed-in-first-attempt 67/67
+  R - F R x1.0p95    harmful rate    +0.00 [   +0.00,   +0.00] 0  harmed-in-first-attempt 67/67
+  R - F R x1.2p95    harmful rate    +0.00 [   +0.00,   +0.00] 0  harmed-in-first-attempt 67/67
+  H22-1 [soft12] force guard useless at every threshold: SUPPORTED
+  H22-2 [soft12] M - F harmful rate    -0.20 [   -0.28,   -0.12] -, safe 54 vs 52 -> SUPPORTED
+  H22-3 [soft12] Spearman(force, load) median 0.75 (n=53) -> NOT SUPPORTED
+
+=== part B, hard (n=600) ===
+
+  arm             safe  harmful  abstain    mean     p90
+  F                344      229        0    5.97   25.25
+  M                351      113      112    2.31    3.03
+  S_A (2)          341      167       67    4.40   19.22
+  S_B (10.5)       287       26      268    0.42    0.00
+  S_C (3.5)        337      146       92    3.73   14.90
+  H22-4 (primary) M - S_C (3.5): harmful rate    -0.06 [   -0.09,   -0.02] - | load    -1.43 [   -2.48,   -0.38] - | safe 351 vs 337 -> MODEL BETTER
+  M - S_A (2): harmful rate    -0.09 [   -0.13,   -0.05] - | load    -2.09 [   -3.14,   -1.05] - | safe 351 vs 341 -> MODEL BETTER
+  M - S_B (10.5): harmful rate    +0.14 [   +0.11,   +0.18] + | load    +1.88 [   +0.87,   +2.90] + | safe 351 vs 287 -> SCREEN BETTER
+  M - F (fourth replication): harmful rate    -0.19 [   -0.23,   -0.16] - | safe 351 vs 344

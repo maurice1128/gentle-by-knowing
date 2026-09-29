@@ -1,0 +1,31 @@
+development set 160 persons (NOT evidence)
+F fixed rule                                 safe   94  harmful   61  abstain   0  mean harm   6.94  p90  26.47
+R reactive (round 17)                        safe   97  harmful   61  abstain   0  mean harm   5.02  p90  20.65
+M round-19 rule (no probe)                   safe   90  harmful   36  abstain  30  mean harm   2.99  p90   4.46
+H margin 1.5 tries 1 never try unfitted      safe   84  harmful   32  abstain  41  mean harm   1.86  p90   3.68
+H margin 1.5 tries 1 try unfitted if over <= 3 safe   91  harmful   43  abstain  21  mean harm   2.76  p90  13.09
+H margin 1.5 tries 1 try all                 safe   93  harmful   60  abstain   0  mean harm   4.50  p90  19.46
+H margin 1.5 tries 2 never try unfitted      safe   84  harmful   32  abstain  41  mean harm   1.86  p90   3.68
+H margin 1.5 tries 2 try unfitted if over <= 3 safe   92  harmful   43  abstain  21  mean harm   3.35  p90  13.09
+H margin 1.5 tries 2 try all                 safe   94  harmful   60  abstain   0  mean harm   5.15  p90  20.59
+H margin 1.5 tries 3 never try unfitted      safe   84  harmful   32  abstain  41  mean harm   1.89  p90   3.68
+H margin 1.5 tries 3 try unfitted if over <= 3 safe   92  harmful   43  abstain  21  mean harm   3.52  p90  13.09
+H margin 1.5 tries 3 try all                 safe   94  harmful   60  abstain   0  mean harm   5.36  p90  20.59
+H margin 3.0 tries 1 never try unfitted      safe   77  harmful   26  abstain  54  mean harm   1.06  p90   2.23
+H margin 3.0 tries 1 try unfitted if over <= 3 safe   90  harmful   36  abstain  30  mean harm   1.93  p90   3.87
+H margin 3.0 tries 1 try all                 safe   93  harmful   60  abstain   0  mean harm   4.17  p90  18.40
+H margin 3.0 tries 2 never try unfitted      safe   77  harmful   26  abstain  54  mean harm   1.10  p90   2.23
+H margin 3.0 tries 2 try unfitted if over <= 3 safe   91  harmful   36  abstain  30  mean harm   2.27  p90   3.92
+H margin 3.0 tries 2 try all                 safe   94  harmful   60  abstain   0  mean harm   4.89  p90  20.60
+H margin 3.0 tries 3 never try unfitted      safe   77  harmful   26  abstain  54  mean harm   1.10  p90   2.23
+H margin 3.0 tries 3 try unfitted if over <= 3 safe   91  harmful   36  abstain  30  mean harm   2.40  p90   3.92
+H margin 3.0 tries 3 try all                 safe   94  harmful   60  abstain   0  mean harm   5.07  p90  20.60
+H margin 4.5 tries 1 never try unfitted      safe   72  harmful   18  abstain  67  mean harm   0.66  p90   0.65
+H margin 4.5 tries 1 try unfitted if over <= 3 safe   84  harmful   29  abstain  41  mean harm   1.40  p90   2.90
+H margin 4.5 tries 1 try all                 safe   93  harmful   57  abstain   0  mean harm   4.03  p90  19.48
+H margin 4.5 tries 2 never try unfitted      safe   72  harmful   18  abstain  67  mean harm   0.66  p90   0.65
+H margin 4.5 tries 2 try unfitted if over <= 3 safe   86  harmful   29  abstain  41  mean harm   1.43  p90   2.90
+H margin 4.5 tries 2 try all                 safe   96  harmful   57  abstain   0  mean harm   4.72  p90  20.79
+H margin 4.5 tries 3 never try unfitted      safe   72  harmful   18  abstain  67  mean harm   0.66  p90   0.65
+H margin 4.5 tries 3 try unfitted if over <= 3 safe   86  harmful   29  abstain  41  mean harm   1.43  p90   2.90
+H margin 4.5 tries 3 try all                 safe   96  harmful   57  abstain   0  mean harm   4.90  p90  20.79

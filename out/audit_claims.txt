@@ -1,0 +1,27 @@
+audit set: 600 confirmation persons with full grids (round 24 + round 25 A)
+reference: F safe 348 harmful 218 | M safe 332 harmful 118 declined 122 | L safe 341 harmful 53 declined 177
+
+--- A1: every fixed strategy on these persons (hindsight) ---
+   (0.15, 0.0, 0.1)       harmful  203  safe  135
+   (0.15, -40.0, 0.1)     harmful  214  safe  324
+   (-0.03, 0.0, 0.1)      harmful  214  safe  302
+   (0.12, 0.0, 0.1)       harmful  215  safe  180
+   (0.12, -40.0, 0.1)     harmful  216  safe  334
+   (0.0, 0.0, 0.1)        harmful  216  safe  323
+   preregistered F (0.03, -40.0, 0.1): harmful 218, safe 348; rank by harmful 9 of 48
+   hindsight-best fixed (fewest harmful): (0.15, 0.0, 0.1) harmful 203 safe 135
+   hindsight-best fixed with safe >= F - 2.5%: (0.12, -40.0, 0.1) harmful 216 safe 334
+   A1 verdict: CLAIM STANDS: best fixed strategy has > 1.5x L's harmful outcomes  (L harmful 53)
+
+--- A2: glenohumeral shear of the executed lifts (N, 50 ms peak) ---
+   F: mean   72.5  median   52.6  p90  155.4  (n=600 executed)
+   M: mean   62.3  median   45.9  p90  123.7  (n=478 executed)
+   L: mean   55.5  median   41.8  p90   98.4  (n=423 executed)
+   paired on persons L lifts (n=423): L - F mean -3.6 N, median +0.0 N
+   A2 verdict: NO LOAD SHIFT to GH shear (within 20% or lower)
+
+--- A3: stale records (free range over-estimated by b degrees on restricted joints, plus N(0,20)) ---
+   bias + 0.0 deg: L safe 341 harmful 53 declined 177 | M safe 332 harmful 118 declined 122
+   bias + 5.0 deg: L safe 353 harmful 57 declined 159 | M safe 318 harmful 160 declined 94
+   bias +10.0 deg: L safe 364 harmful 68 declined 133 | M safe 355 harmful 210 declined 0
+   A3 verdict: L robust to +10 deg over-estimation (harmful rise <= 50%)  (53 -> 68)

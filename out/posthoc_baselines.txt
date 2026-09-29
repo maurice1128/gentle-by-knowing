@@ -1,0 +1,87 @@
+TYPE lookup table (training): E: (-0.06, -20.0, 0.1) p_safe 0.70; N: (0.0, -40.0, 0.25) p_safe 0.97; S: (0.06, -40.0, 0.25) p_safe 0.60; SE: (0.0, -40.0, 0.1) p_safe 0.15
+post hoc baselines: 600 confirmation persons with full grids (r24 300, r25A 300), record error 20 deg, harmful >= 0.5 N m
+tuning (criterion: fewest harmful with safe >= F - 2.5 pp, on training persons only):
+  tuned TYPE tau on 400 training persons: param 0.15  (train harmful 60, safe 259, declined 61; F safe 229)
+  tuned FLAGKNN tau on 400 training persons: param 0.65  (train harmful 24, safe 225, declined 137; F safe 229)
+  tuned S threshold (deg) on 400 training persons: param 0.0  (train harmful 148, safe 229, declined 0; F safe 229)
+  tuned M (margin, abstain_over) on 400 training persons: param (6, 6)  (train harmful 80, safe 225, declined 74; F safe 229)
+
+=== confirmation persons: all 600 (n=600) ===
+  arm                           safe  harmful  declined
+  F                              348      218         0
+  CAT                            224        0       354
+  S(3.5, prereg)                 303       97       172
+  S*(0)                          348      218         0
+  M(prereg)                      332      118       122
+  M*(6, 6)                       335      113       122
+  L(prereg)                      341       53       177
+  TYPE(tau 0.15)                 396       94        71
+  FLAGKNN(tau 0.65)              353       46       170
+  L - CAT                     : harmful +0.088 [+0.066, +0.111] | safe +0.195 [+0.163, +0.227]
+  L - S(3.5, prereg)          : harmful -0.073 [-0.100, -0.047] | safe +0.063 [+0.036, +0.090]
+  L - S*(0)                   : harmful -0.275 [-0.311, -0.239] | safe -0.012 [-0.043, +0.019]
+  L - M(prereg)               : harmful -0.108 [-0.138, -0.079] | safe +0.015 [-0.011, +0.041]
+  L - M*(6, 6)                : harmful -0.100 [-0.129, -0.071] | safe +0.010 [-0.015, +0.035]
+  L - TYPE(tau 0.15)          : harmful -0.068 [-0.091, -0.046] | safe -0.092 [-0.118, -0.065]
+  L - FLAGKNN(tau 0.65)       : harmful +0.012 [-0.007, +0.030] | safe -0.020 [-0.044, +0.004]
+
+=== confirmation persons: r24 (n=300) ===
+  arm                           safe  harmful  declined
+  F                              177      110         0
+  CAT                            112        0       179
+  S(3.5, prereg)                 155       51        83
+  S*(0)                          177      110         0
+  M(prereg)                      162       67        59
+  M*(6, 6)                       163       66        59
+  L(prereg)                      174       25        91
+  TYPE(tau 0.15)                 200       48        37
+  FLAGKNN(tau 0.65)              183       25        81
+  L - CAT                     : harmful +0.083 [+0.052, +0.115] | safe +0.207 [+0.161, +0.253]
+  L - S(3.5, prereg)          : harmful -0.087 [-0.125, -0.048] | safe +0.063 [+0.025, +0.102]
+  L - S*(0)                   : harmful -0.283 [-0.335, -0.232] | safe -0.010 [-0.052, +0.032]
+  L - M(prereg)               : harmful -0.140 [-0.183, -0.097] | safe +0.040 [+0.006, +0.074]
+  L - M*(6, 6)                : harmful -0.137 [-0.179, -0.094] | safe +0.037 [+0.002, +0.072]
+  L - TYPE(tau 0.15)          : harmful -0.077 [-0.110, -0.044] | safe -0.087 [-0.123, -0.051]
+  L - FLAGKNN(tau 0.65)       : harmful +0.000 [-0.026, +0.026] | safe -0.030 [-0.064, +0.004]
+
+=== confirmation persons: r25A (n=300) ===
+  arm                           safe  harmful  declined
+  F                              171      108         0
+  CAT                            112        0       175
+  S(3.5, prereg)                 148       46        89
+  S*(0)                          171      108         0
+  M(prereg)                      170       51        63
+  M*(6, 6)                       172       47        63
+  L(prereg)                      167       28        86
+  TYPE(tau 0.15)                 196       46        34
+  FLAGKNN(tau 0.65)              170       21        89
+  L - CAT                     : harmful +0.093 [+0.060, +0.126] | safe +0.183 [+0.139, +0.227]
+  L - S(3.5, prereg)          : harmful -0.060 [-0.097, -0.023] | safe +0.063 [+0.025, +0.102]
+  L - S*(0)                   : harmful -0.267 [-0.317, -0.216] | safe -0.013 [-0.059, +0.032]
+  L - M(prereg)               : harmful -0.077 [-0.118, -0.036] | safe -0.010 [-0.049, +0.029]
+  L - M*(6, 6)                : harmful -0.063 [-0.103, -0.024] | safe -0.017 [-0.052, +0.019]
+  L - TYPE(tau 0.15)          : harmful -0.060 [-0.090, -0.030] | safe -0.097 [-0.136, -0.057]
+  L - FLAGKNN(tau 0.65)       : harmful +0.023 [-0.004, +0.050] | safe -0.010 [-0.043, +0.023]
+
+=== paired, on the persons each rule lifts (all 600) ===
+  L(prereg): lifted 423; harmful 53 vs F 95  (-0.099 [-0.128, -0.071]); mean load 1.63 vs F 2.31
+  M(prereg): lifted 478; harmful 118 vs F 140  (-0.046 [-0.069, -0.023]); mean load 3.88 vs F 3.51
+
+=== by true restriction type (all 600): safe / harmful / declined ===
+  none     n=246 | F: 224/0/0 | M(prereg): 224/0/0 | L(prereg): 224/0/0 | oracle safe 243
+  shoulder n=165 | F: 80/75/0 | M(prereg): 48/31/81 | L(prereg): 53/30/78 | oracle safe 119
+  elbow    n=118 | F: 35/82/0 | M(prereg): 58/59/0 | L(prereg): 64/23/28 | oracle safe 92
+  both     n= 71 | F: 9/61/0 | M(prereg): 2/28/41 | L(prereg): 0/0/71 | oracle safe 17
+
+=== L vs oracle (all 600): oracle safe 471, L safe 341; missing safe completions = unnecessary refusals 94 + harmful where safe existed 11 + incomplete where safe existed 25; L harmful where no safe strategy existed 42
+
+=== Pareto sweeps (all 600; safe, harmful) ===
+  learned policy L (tau): (408,153) (408,153) (408,153) (408,131) (408,118) (407,111) (405,105) (403,101) (403,99) (398,94) (395,87) (391,78) (378,73) (341,53) (322,39) (302,31) (285,20) (247,8) (232,5) (227,3) (225,0)
+  type lookup (tau): (407,153) (407,153) (407,153) (396,94) (396,94) (396,94) (396,94) (396,94) (396,94) (396,94) (396,94) (396,94) (396,94) (299,34) (299,34) (224,0) (224,0) (224,0) (224,0) (224,0) (224,0)
+  flags + posture kNN (tau): (415,147) (415,147) (414,135) (414,118) (414,108) (412,103) (408,101) (405,94) (403,92) (402,91) (401,86) (395,80) (381,69) (353,46) (334,32) (318,25) (308,18) (265,10) (246,5) (230,1) (224,0)
+  record threshold S (deg): (348,218) (309,110) (306,101) (303,97) (303,96) (300,95) (300,93) (298,89) (295,83) (289,78) (288,76) (286,74) (283,72) (282,64) (280,59) (279,54) (277,49) (275,45) (272,42) (270,37) (266,33) (264,30) (264,29) (264,26) (261,23) (256,22) (254,20) (250,19) (249,18) (248,14) (246,13)
+  body model M (margin): (321,152) (332,131) (332,118) (305,83) (299,76) (291,70) (287,59) (284,42) (266,30)
+  fixed rule F: (348, 218)
+  flag -> decline: (224, 0)
+  L (preregistered): (341, 53)
+  oracle: (471, 0)

@@ -1,0 +1,23 @@
+test persons 40 (24 with a restricted joint); probes available for 40; F = (0.03, -40.0, 0.1); K = 5, margin 3.0 deg
+
+arm                  done harm median    mean     p90 no end-range load GH shear   time
+F fixed rule        34/40        0.00    8.29   30.49               55%     64.7   1.80
+R reactive          34/40        0.00    7.01   30.49               55%     64.7   1.82
+M_pop rec+-0        34/40        0.00    6.71   22.82               60%     16.4   1.16
+M_pop rec+-4        33/40        0.00    6.38   22.82               55%     15.9   1.16
+M_pop rec+-8        33/40        0.00    8.48   22.40               62%     16.7   1.18
+M_id rec+-0         34/40        0.00    5.53   14.83               65%     26.2   4.08
+M_id rec+-4         32/40        0.00    4.49   14.31               62%     26.5   4.11
+M_id rec+-8         33/40        0.00    6.88   14.83               62%     26.5   3.99
+O oracle            37/40        0.00    5.44   13.56               70%     14.9   1.42
+
+paired differences (negative = first arm gentler / faster)
+H18-1 (primary) M_id rec+-4 - F fixed rule: harm    -3.80 [   -6.16,   -1.45] - | GH shear   -34.23 [  -50.15,  -18.30] - | time    +2.36 [   +2.13,   +2.59] + | done 32 vs 34 -> SUPPORTED
+H18-2 (key) M_id rec+-4 - R reactive: harm    -2.52 [   -5.95,   +0.91] 0 | GH shear   -25.22 [  -47.44,   -3.00] - | time    +2.02 [   +1.57,   +2.47] + | done 32 vs 34 -> NOT SUPPORTED
+H18-3 (identification) M_id rec+-4 - M_pop rec+-4: harm    -1.89 [   -3.77,   -0.01] - | GH shear    -2.51 [  -19.60,  +14.57] 0 | time    +2.86 [   +2.64,   +3.09] + | done 32 vs 33 -> SUPPORTED
+H18-4 record-error tolerance (harm, M_id - F):
+   +-0 deg:    -2.76 [   -6.09,   +0.57] 0    (M_pop - F:    -1.58 [   -4.78,   +1.62] 0)
+   +-4 deg:    -3.80 [   -6.16,   -1.45] -    (M_pop - F:    -1.91 [   -4.40,   +0.57] 0)
+   +-8 deg:    -1.41 [   -5.56,   +2.74] 0    (M_pop - F:    +0.18 [   -3.79,   +4.16] 0)
+H18-5 probe harm: > 0.5 N m in 7/40 persons, median 0.00, max 3.31 N m; M_id - O harm    -0.95 [   -3.83,   +1.93] 0
+restricted persons only (n=24): M_id - F    -6.34 [   -9.89,   -2.79] - | M_id - R    -4.20 [   -9.85,   +1.44] 0 | M_id - M_pop    -3.15 [   -6.19,   -0.12] -

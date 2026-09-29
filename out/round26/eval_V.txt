@@ -1,0 +1,15 @@
+round 26 world V (reflex scale 2.0, body variation 0.40): 300 persons, stage-2 errors 0
+
+  harmful if >= 0.5 N m
+    F: safe  153  harmful  119  declined    0
+    M: safe  144  harmful   77  declined   54
+    L: safe  152  harmful   27  declined   98
+    H26-1 [0.5] L - F: harmful    -0.31 [   -0.36,   -0.25] - | safe    -0.00 [   -0.05,   +0.05] 0 -> SUPPORTED
+    H26-2 [0.5] L - M: harmful    -0.17 [   -0.22,   -0.12] - | safe    +0.03 [   -0.02,   +0.07] 0 -> SUPPORTED
+
+  harmful if >= 2.5 N m
+    F: safe  187  harmful   79  declined    0
+    M: safe  156  harmful   61  declined   54
+    L: safe  162  harmful   17  declined   98
+    H26-1 [2.5] L - F: harmful    -0.21 [   -0.26,   -0.16] - | safe    -0.08 [   -0.14,   -0.03] - -> SUPPORTED (secondary)
+    H26-2 [2.5] L - M: harmful    -0.15 [   -0.19,   -0.10] - | safe    +0.02 [   -0.02,   +0.06] 0 -> SUPPORTED (secondary)

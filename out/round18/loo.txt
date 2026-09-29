@@ -1,0 +1,5 @@
+library bodies 199; leave-one-out, K = 5
+  shoulder excursion error SD: identified 1.13 deg, population mean 2.60 deg -> reduction 57%
+  elbow    excursion error SD: identified 2.08 deg, population mean 4.11 deg -> reduction 49%
+  completion prediction agrees: identified 87%, population 75%
+GATE (shoulder error SD reduced by >= 30%): PASS

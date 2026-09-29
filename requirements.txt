@@ -1,0 +1,7 @@
+# Simulation environment (the author's .venv_myo): every round script, the eval stages,
+# dev_*.py, make_figure_scene.py (frame rendering) and make_web_videos_gentle.py (capture).
+# Python 3.11.15. Only packages the code imports directly are pinned; MyoSuite pulls in its own dependencies
+# (gymnasium 1.2.3, h5py, imageio, ... in the author's environment).
+numpy==2.4.6
+mujoco==3.6.0
+myosuite==2.12.2

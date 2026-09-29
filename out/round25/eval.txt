@@ -1,0 +1,57 @@
+round 25 : 15098 episodes, 0 errors; A 300, B 250; tau {'tau_std': 0.65, 'tau_norest': 0.6, 'norest_insample': {'harmful': 37, 'safe': 241}}
+
+=== A: standard population, hard limits (n=300) ===
+  rule               safe  harmful  declined | safe@2.5 harm@2.5
+  F                   171      108         0 |      201       77
+  M                   170       51        63 |      184       36
+  S_C                 148       46        89 |      158       35
+  L_std               167       28        86 |      176       19
+  L_norest            174       29        75 |      183       19
+  L_restnoise         171       24        87 |      179       16
+  M_half              170       81        30 |      191       59
+  L_std_half          171       64        44 |      190       45
+  L_norest_half       173       65        38 |      190       47
+  L_restnoise_half    173       62        43 |      192       43
+  CAT_half            142       50        90 |      156       36
+  O                   234        0        66 |      234        0
+  H25-1 L_std - M: harmful    -0.08 [   -0.12,   -0.03] - | safe    -0.01 [   -0.05,   +0.03] 0 | harmful@2.5    -0.06 [   -0.10,   -0.02] - -> NOT SUPPORTED
+  H25-1 L_std - F: harmful    -0.27 [   -0.32,   -0.21] - | safe    -0.01 [   -0.06,   +0.04] 0 | harmful@2.5    -0.19 [   -0.24,   -0.15] - -> SUPPORTED
+  H25-2 L_std_half - F: harmful    -0.15 [   -0.19,   -0.10] - | safe    +0.00 [   -0.04,   +0.04] 0 | harmful@2.5    -0.11 [   -0.14,   -0.07] - -> SUPPORTED
+    (report) L_std_half - M_half: harmful    -0.06 [   -0.09,   -0.02] - | safe    +0.00 [   -0.03,   +0.03] 0 | harmful@2.5    -0.05 [   -0.08,   -0.02] - -> SUPPORTED
+    (report) L_std_half - CAT_half: harmful    +0.05 [   +0.02,   +0.07] + | safe    +0.10 [   +0.06,   +0.13] + | harmful@2.5    +0.03 [   +0.01,   +0.05] + -> NOT SUPPORTED
+  undocumented restricted persons: 85; on them L_std_half harmful 50 vs F 50
+  H25-3 L_restnoise - M: harmful    -0.09 [   -0.13,   -0.05] - | safe    +0.00 [   -0.04,   +0.05] 0 | harmful@2.5    -0.07 [   -0.11,   -0.03] - -> SUPPORTED
+  H25-3 L_norest - M: harmful    -0.07 [   -0.11,   -0.04] - | safe    +0.01 [   -0.02,   +0.05] 0 | harmful@2.5    -0.06 [   -0.09,   -0.02] - -> SUPPORTED
+
+=== A first 150: soft20 end-feel, net harm ===
+  rule               safe  harmful  declined | safe@2.5 harm@2.5
+  F                    64       72         0 |       90       45
+  M                    69       41        30 |       87       23
+  S_C                  61       37        41 |       76       22
+  L_std                73       22        41 |       79       15
+  L_norest             72       32        33 |       85       16
+  L_restnoise          73       25        41 |       80       17
+  M_half               64       60        14 |       88       35
+  L_std_half           65       50        20 |       86       28
+  L_norest_half        64       54        16 |       87       29
+  L_restnoise_half     65       53        18 |       86       30
+  CAT_half             58       38        42 |       73       22
+  H25-5 L_std - F: harmful    -0.33 [   -0.41,   -0.25] - | safe    +0.06 [   +0.00,   +0.12] + | harmful@2.5    -0.20 [   -0.27,   -0.13] - -> SUPPORTED
+  H25-5 L_std - M: harmful    -0.13 [   -0.20,   -0.05] - | safe    +0.03 [   -0.03,   +0.08] 0 | harmful@2.5    -0.05 [   -0.11,   +0.01] 0 -> SUPPORTED
+
+=== B: shifted population (more and tighter contractures), hard limits (n=250) ===
+  restricted in B: shoulder 167, elbow 116
+  rule               safe  harmful  declined | safe@2.5 harm@2.5
+  F                    72      170         0 |      100      142
+  M                    70       77        97 |       88       59
+  S_C                  58       79       106 |       74       63
+  L_std                77       38       129 |       85       30
+  L_norest             74       44       123 |       87       31
+  L_restnoise          75       43       126 |       85       33
+  M_half               70      116        57 |       91       95
+  L_std_half           74      108        61 |       94       88
+  L_norest_half        71      107        63 |       90       88
+  L_restnoise_half     73      109        61 |       91       91
+  CAT_half             55       85       103 |       69       71
+  H25-4 L_std - F: harmful    -0.53 [   -0.59,   -0.46] - | safe    +0.02 [   -0.03,   +0.07] 0 | harmful@2.5    -0.45 [   -0.51,   -0.38] - -> SUPPORTED
+  H25-4 L_std - M: harmful    -0.16 [   -0.22,   -0.09] - | safe    +0.03 [   -0.01,   +0.06] 0 | harmful@2.5    -0.12 [   -0.17,   -0.06] - -> SUPPORTED

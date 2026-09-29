@@ -1,0 +1,169 @@
+round 23 : 5676 episodes, 0 errors; W 120 persons, R 600 persons; F = (0.03, -40.0, 0.1)
+
+=== W, condition soft12 (n=120) ===
+  harm = net, harmful if >= 0.5 N m
+    arm               safe  harmful  abstain    mean     p90
+    F                   57       58        0    3.54   11.47
+    M                   62       31       22    0.78    2.85
+    S_C (3.5)           56       38       22    2.27    6.79
+    R x0.6p95           32       58        0    2.45    7.65
+    R x0.8p95           39       59        0    3.36    9.70
+    R x1.0p95           56       59        0    3.68   11.03
+    R x1.2p95           58       59        0    4.32   13.00
+    R - F R x0.6p95    harmful rate    +0.00 [   -0.02,   +0.02] 0  safe 32  harmed-in-first-attempt 57/58
+    R - F R x0.8p95    harmful rate    +0.01 [   -0.01,   +0.03] 0  safe 39  harmed-in-first-attempt 58/59
+    R - F R x1.0p95    harmful rate    +0.01 [   -0.01,   +0.03] 0  safe 56  harmed-in-first-attempt 58/59
+    R - F R x1.2p95    harmful rate    +0.01 [   -0.01,   +0.03] 0  safe 58  harmed-in-first-attempt 58/59
+    [soft12 bridge, 0.5] M - F harmful rate    -0.23 [   -0.31,   -0.14] -, safe 62 vs 57
+  harm = net, harmful if >= 2.5 N m
+    arm               safe  harmful  abstain    mean     p90
+    F                   79       36        0    3.54   11.47
+    M                   75       16       22    0.78    2.85
+    S_C (3.5)           66       28       22    2.27    6.79
+    R x0.6p95           47       30        0    2.45    7.65
+    R x0.8p95           57       37        0    3.36    9.70
+    R x1.0p95           78       37        0    3.68   11.03
+    R x1.2p95           80       37        0    4.32   13.00
+    R - F R x0.6p95    harmful rate    -0.05 [   -0.10,   +0.00] 0  safe 47  harmed-in-first-attempt 27/30
+    R - F R x0.8p95    harmful rate    +0.01 [   -0.04,   +0.05] 0  safe 57  harmed-in-first-attempt 32/37
+    R - F R x1.0p95    harmful rate    +0.01 [   -0.01,   +0.03] 0  safe 78  harmed-in-first-attempt 36/37
+    R - F R x1.2p95    harmful rate    +0.01 [   -0.01,   +0.03] 0  safe 80  harmed-in-first-attempt 36/37
+    [soft12 bridge, 2.5] M - F harmful rate    -0.17 [   -0.25,   -0.08] -, safe 75 vs 79
+  harm = gross, harmful if >= 0.5 N m
+    arm               safe  harmful  abstain    mean     p90
+    F                   57       59        0    3.68   12.08
+    M                   60       34       22    0.81    2.85
+    S_C (3.5)           56       38       22    2.31    6.92
+    R x0.6p95           32       59        0    2.59    8.95
+    R x0.8p95           39       59        0    3.49    9.79
+    R x1.0p95           56       59        0    3.82   11.10
+    R x1.2p95           58       59        0    4.46   16.56
+  persons with passive end-range tension >= 0.5 N m before contact: 4/120
+
+=== W, condition soft20 (n=120) ===
+  harm = net, harmful if >= 0.5 N m
+    arm               safe  harmful  abstain    mean     p90
+    F                   52       63        0    3.65   11.43
+    M                   59       32       22    1.24    5.07
+    S_C (3.5)           52       41       22    2.72    9.83
+    R x0.6p95           27       58        0    2.61   10.12
+    R x0.8p95           34       60        0    3.31   10.82
+    R x1.0p95           52       60        0    3.90   12.50
+    R x1.2p95           53       64        0    4.55   12.77
+    R - F R x0.6p95    harmful rate    -0.04 [   -0.08,   -0.00] -  safe 27  harmed-in-first-attempt 58/58
+    R - F R x0.8p95    harmful rate    -0.03 [   -0.06,   +0.01] 0  safe 34  harmed-in-first-attempt 59/60
+    R - F R x1.0p95    harmful rate    -0.03 [   -0.06,   +0.01] 0  safe 52  harmed-in-first-attempt 60/60
+    R - F R x1.2p95    harmful rate    +0.01 [   -0.01,   +0.03] 0  safe 53  harmed-in-first-attempt 63/64
+    H23-1 [soft20, 0.5] force guard never helps by > 5 points: SUPPORTED
+    H23-2 [soft20, 0.5] M - F harmful rate    -0.26 [   -0.35,   -0.17] -, safe 59 vs 52 -> SUPPORTED
+  harm = net, harmful if >= 2.5 N m
+    arm               safe  harmful  abstain    mean     p90
+    F                   71       42        0    3.65   11.43
+    M                   69       22       22    1.24    5.07
+    S_C (3.5)           59       33       22    2.72    9.83
+    R x0.6p95           39       34        0    2.61   10.12
+    R x0.8p95           49       40        0    3.31   10.82
+    R x1.0p95           71       40        0    3.90   12.50
+    R x1.2p95           72       44        0    4.55   12.77
+    R - F R x0.6p95    harmful rate    -0.07 [   -0.12,   -0.01] -  safe 39  harmed-in-first-attempt 33/34
+    R - F R x0.8p95    harmful rate    -0.02 [   -0.07,   +0.03] 0  safe 49  harmed-in-first-attempt 36/40
+    R - F R x1.0p95    harmful rate    -0.02 [   -0.05,   +0.02] 0  safe 71  harmed-in-first-attempt 38/40
+    R - F R x1.2p95    harmful rate    +0.02 [   -0.01,   +0.04] 0  safe 72  harmed-in-first-attempt 42/44
+    H23-1 [soft20, 2.5] force guard never helps by > 5 points: SUPPORTED
+    H23-2 [soft20, 2.5] M - F harmful rate    -0.17 [   -0.25,   -0.08] -, safe 69 vs 71 -> SUPPORTED
+  harm = gross, harmful if >= 0.5 N m
+    arm               safe  harmful  abstain    mean     p90
+    F                   52       64        0    9.67   21.88
+    M                   54       40       22    3.56    9.85
+    S_C (3.5)           52       42       22    5.70   18.42
+    R x0.6p95           27       64        0    8.43   17.11
+    R x0.8p95           34       64        0    9.23   19.89
+    R x1.0p95           51       64        0    9.90   24.69
+    R x1.2p95           53       64        0   10.57   29.12
+  persons with passive end-range tension >= 0.5 N m before contact: 30/120
+
+=== W, condition soft25 (n=120) ===
+  harm = net, harmful if >= 0.5 N m
+    arm               safe  harmful  abstain    mean     p90
+    F                   51       61        0    2.92    9.28
+    M                   59       31       22    1.01    3.79
+    S_C (3.5)           50       40       22    2.17    7.64
+    R x0.6p95           25       53        0    1.86    6.41
+    R x0.8p95           32       58        0    3.08   10.06
+    R x1.0p95           53       60        0    3.69   10.13
+    R x1.2p95           53       63        0    4.23   13.18
+    R - F R x0.6p95    harmful rate    -0.07 [   -0.11,   -0.02] -  safe 25  harmed-in-first-attempt 53/53
+    R - F R x0.8p95    harmful rate    -0.03 [   -0.06,   +0.01] 0  safe 32  harmed-in-first-attempt 57/58
+    R - F R x1.0p95    harmful rate    -0.01 [   -0.05,   +0.03] 0  safe 53  harmed-in-first-attempt 58/60
+    R - F R x1.2p95    harmful rate    +0.02 [   -0.02,   +0.05] 0  safe 53  harmed-in-first-attempt 60/63
+    H23-1 [soft25, 0.5] force guard never helps by > 5 points: SUPPORTED
+    H23-2 [soft25, 0.5] M - F harmful rate    -0.25 [   -0.34,   -0.16] -, safe 59 vs 51 -> SUPPORTED
+  harm = net, harmful if >= 2.5 N m
+    arm               safe  harmful  abstain    mean     p90
+    F                   76       34        0    2.92    9.28
+    M                   71       18       22    1.01    3.79
+    S_C (3.5)           64       25       22    2.17    7.64
+    R x0.6p95           38       29        0    1.86    6.41
+    R x0.8p95           50       35        0    3.08   10.06
+    R x1.0p95           75       35        0    3.69   10.13
+    R x1.2p95           76       37        0    4.23   13.18
+    R - F R x0.6p95    harmful rate    -0.04 [   -0.09,   +0.00] 0  safe 38  harmed-in-first-attempt 28/29
+    R - F R x0.8p95    harmful rate    +0.01 [   -0.03,   +0.05] 0  safe 50  harmed-in-first-attempt 30/35
+    R - F R x1.0p95    harmful rate    +0.01 [   -0.01,   +0.03] 0  safe 75  harmed-in-first-attempt 34/35
+    R - F R x1.2p95    harmful rate    +0.03 [   -0.01,   +0.06] 0  safe 76  harmed-in-first-attempt 34/37
+    H23-1 [soft25, 2.5] force guard never helps by > 5 points: SUPPORTED
+    H23-2 [soft25, 2.5] M - F harmful rate    -0.13 [   -0.22,   -0.05] -, safe 71 vs 76 -> NOT SUPPORTED
+  harm = gross, harmful if >= 0.5 N m
+    arm               safe  harmful  abstain    mean     p90
+    F                   49       67        0   24.09   44.43
+    M                   50       44       22   10.17   21.47
+    S_C (3.5)           49       45       22   14.28   34.13
+    R x0.6p95           24       67        0   23.00   41.02
+    R x0.8p95           31       67        0   24.26   46.03
+    R x1.0p95           48       67        0   24.88   46.20
+    R x1.2p95           50       67        0   25.42   47.69
+  persons with passive end-range tension >= 0.5 N m before contact: 50/120
+
+=== R, hard limits, record quality (n=600) ===
+  harm = net, harmful if >= 0.5 N m
+    arm               safe  harmful  abstain    mean     p90
+    F                  361      217        0    5.70   22.71
+    M(4)               365      109      101    1.74    2.63
+    S_C(4)             355      143       80    4.07   14.77
+    S_B(4)             311       30      239    0.51    0.00
+    M(10)              349      117      108    3.14    3.69
+    S_C(10)            329      107      144    2.81    4.15
+    S_B(10)            306       62      212    1.52    0.63
+    M(20)              357      113      105    2.50    3.60
+    S_C(20)            332      102      146    2.44    3.58
+    S_B(20)            318       73      190    1.68    1.86
+    CAT                253        2      328    0.00    0.00
+    CAT_half           303      102      176    2.84    3.36
+    H23-3 [0.5] M(10) - F harmful rate    -0.17 [   -0.20,   -0.13] -, safe 349 vs 361 -> SUPPORTED
+    H23-3 [0.5] M(20) - F harmful rate    -0.17 [   -0.21,   -0.14] -, safe 357 vs 361 -> SUPPORTED
+    [0.5] M(4) - S_C(4) harmful rate    -0.06 [   -0.09,   -0.02] - | safe 365 vs 355 -> MODEL BETTER
+    H23-4 [0.5] M(10) - S_C(10) harmful rate    +0.02 [   -0.01,   +0.04] 0 | safe 349 vs 329 -> EQUIVALENT
+    H23-4 [0.5] M(20) - S_C(20) harmful rate    +0.02 [   -0.00,   +0.04] 0 | safe 357 vs 332 -> EQUIVALENT
+    H23-5 [0.5] CAT      - F    -0.36 [   -0.40,   -0.32] - | - M(20)    -0.18 [   -0.22,   -0.15] - | safe 253 (F 361, M(20) 357)
+    H23-5 [0.5] CAT_half - F    -0.19 [   -0.23,   -0.16] - | - M(20)    -0.02 [   -0.05,   +0.02] 0 | safe 303 (F 361, M(20) 357)
+  harm = net, harmful if >= 2.5 N m
+    arm               safe  harmful  abstain    mean     p90
+    F                  423      148        0    5.70   22.71
+    M(4)               410       62      101    1.74    2.63
+    S_C(4)             385      109       80    4.07   14.77
+    S_B(4)             315       26      239    0.51    0.00
+    M(10)              387       76      108    3.14    3.69
+    S_C(10)            355       77      144    2.81    4.15
+    S_B(10)            321       46      212    1.52    0.63
+    M(20)              394       69      105    2.50    3.60
+    S_C(20)            359       71      146    2.44    3.58
+    S_B(20)            335       53      190    1.68    1.86
+    CAT                255        0      328    0.00    0.00
+    CAT_half           334       69      176    2.84    3.36
+    H23-3 [2.5] M(10) - F harmful rate    -0.12 [   -0.15,   -0.09] -, safe 387 vs 423 -> NOT SUPPORTED
+    H23-3 [2.5] M(20) - F harmful rate    -0.13 [   -0.16,   -0.10] -, safe 394 vs 423 -> NOT SUPPORTED
+    [2.5] M(4) - S_C(4) harmful rate    -0.08 [   -0.11,   -0.05] - | safe 410 vs 385 -> MODEL BETTER
+    H23-4 [2.5] M(10) - S_C(10) harmful rate    -0.00 [   -0.02,   +0.02] 0 | safe 387 vs 355 -> EQUIVALENT
+    H23-4 [2.5] M(20) - S_C(20) harmful rate    -0.00 [   -0.02,   +0.01] 0 | safe 394 vs 359 -> EQUIVALENT
+    H23-5 [2.5] CAT      - F    -0.25 [   -0.28,   -0.21] - | - M(20)    -0.12 [   -0.14,   -0.09] - | safe 255 (F 423, M(20) 394)
+    H23-5 [2.5] CAT_half - F    -0.13 [   -0.16,   -0.10] - | - M(20)    +0.00 [   -0.03,   +0.03] 0 | safe 334 (F 423, M(20) 394)

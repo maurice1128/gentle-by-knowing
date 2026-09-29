@@ -1,0 +1,45 @@
+round 24 : 14400 episodes, 0 errors, 300 persons; F = (0.03, -40.0, 0.1); tau {'4': 0.65, '10': 0.65, '20': 0.65}
+
+=== harmful if robot-caused end-range load >= 0.5 N m ===
+  rung          safe  harmful  declined  mean load
+  F              177      110         0       6.73
+  CAT_half       140       60        88       3.40
+  CAT            112        0       179       0.00
+  S_C(20)        155       51        83       2.25
+  M(20)          162       67        59       3.19
+  L(20)          174       25        91       0.79
+  S_C(10)        162       56        71       3.30
+  M(10)          173       63        49       3.70
+  L(10)          180       20        88       0.44
+  S_C(4)         172       69        46       3.26
+  M(4)           176       64        49       2.74
+  L(4)           184       20        85       0.71
+  O (perfect)    237        0        63       0.01
+  H24-1 [0.5] L(20) - M(20): harmful rate    -0.14 [   -0.19,   -0.09] - | safe rate    +0.04 [   +0.00,   +0.08] + -> SUPPORTED
+  H24-2 [0.5] L(10) - M(10): harmful rate    -0.14 [   -0.19,   -0.10] - | safe rate    +0.02 [   -0.02,   +0.06] 0 -> SUPPORTED
+  H24-3 [0.5] L(20) - F: harmful rate    -0.28 [   -0.34,   -0.23] - | safe rate    -0.01 [   -0.05,   +0.03] 0 -> NOT SUPPORTED
+  H24-4 [0.5] eps 20: L closes 16% of the M->oracle gap in safe completions and 63% in harmful outcomes
+  H24-4 [0.5] eps 10: L closes 11% of the M->oracle gap in safe completions and 68% in harmful outcomes
+  H24-4 [0.5] eps 4: L closes 13% of the M->oracle gap in safe completions and 69% in harmful outcomes
+
+=== harmful if robot-caused end-range load >= 2.5 N m ===
+  rung          safe  harmful  declined  mean load
+  F              203       80         0       6.73
+  CAT_half       153       45        88       3.40
+  CAT            112        0       179       0.00
+  S_C(20)        170       34        83       2.25
+  M(20)          187       39        59       3.19
+  L(20)          186       12        91       0.79
+  S_C(10)        176       42        71       3.30
+  M(10)          193       40        49       3.70
+  L(10)          192        8        88       0.44
+  S_C(4)         185       54        46       3.26
+  M(4)           193       44        49       2.74
+  L(4)           193       11        85       0.71
+  O (perfect)    253        0        47       0.06
+  H24-1 [2.5] L(20) - M(20): harmful rate    -0.09 [   -0.13,   -0.05] - | safe rate    -0.00 [   -0.04,   +0.04] 0 -> NOT SUPPORTED (secondary threshold)
+  H24-2 [2.5] L(10) - M(10): harmful rate    -0.11 [   -0.15,   -0.07] - | safe rate    -0.00 [   -0.05,   +0.04] 0 -> NOT SUPPORTED (secondary threshold)
+  H24-3 [2.5] L(20) - F: harmful rate    -0.23 [   -0.28,   -0.18] - | safe rate    -0.06 [   -0.10,   -0.01] - -> NOT SUPPORTED (secondary threshold)
+  H24-4 [2.5] eps 20: L closes -2% of the M->oracle gap in safe completions and 69% in harmful outcomes
+  H24-4 [2.5] eps 10: L closes -2% of the M->oracle gap in safe completions and 80% in harmful outcomes
+  H24-4 [2.5] eps 4: L closes 0% of the M->oracle gap in safe completions and 75% in harmful outcomes

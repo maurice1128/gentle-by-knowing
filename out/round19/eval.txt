@@ -1,0 +1,26 @@
+CONFIRMATION SET: 120 persons, types {'N': 49, 'S': 31, 'E': 23, 'SE': 17}; F = (0.03, -40.0, 0.1)
+
+arm            safe completions harmful outcomes abstained mean harm     p90  done median time
+F fixed rule                 70               41         0      6.08   24.05    98        1.86
+R reactive                   76               42         0      5.50   23.14   103        1.88
+M_pop +-0                    70               24        17      0.79    2.54    91        1.70
+M_pop +-4                    66               21        26      1.73    3.39    85        1.70
+M_pop +-8                    70               25        20      2.47    4.37    90        1.71
+M_id +-0                     79               25        15      1.07    3.23    95        2.97
+M_id +-4                     67               29        20      2.12    4.42    85        2.93
+M_id +-8                     70               30        20      2.66    4.36    89        2.84
+
+H19-1 (primary) M_id +-4 - F fixed rule: harmful-outcome rate -0.100 [-0.163, -0.037] | safe completions 67 vs 70 (tolerance 3) -> SUPPORTED
+H19-2 (key) M_id +-4 - R reactive: harmful-outcome rate -0.108 [-0.173, -0.044] | safe completions 67 vs 76 (tolerance 3) -> NOT SUPPORTED
+H19-3 mean harm M_id +-4 - F fixed rule:    -3.96 [   -6.82,   -1.10] - -> SUPPORTED
+H19-3 mean harm M_id +-4 - R reactive:    -3.38 [   -5.54,   -1.23] - -> SUPPORTED
+H19-4 identification, M_id +-4 - M_pop +-4: harmful-outcome rate +0.067 [+0.013, +0.121] | harm    +0.38 [   -0.40,   +1.17] 0 | safe completions 67 vs 66
+record-error sweep (M_id - F): +-0: harmful -0.133, harm -5.01, safe 79 ; +-4: harmful -0.100, harm -3.96, safe 67 ; +-8: harmful -0.092, harm -3.41, safe 70
+
+H19-5 by type (M_id +-4 / F / R):
+  S  n= 31 | M_id: safe  13 harmful   6 harm   2.26 abstain 10 | F: safe  18 harmful  11 harm   6.96 | R: safe  20 harmful  11 harm   8.41
+  E  n= 23 | M_id: safe   9 harmful  13 harm   1.83 abstain  1 | F: safe   6 harmful  17 harm   1.95 | R: safe   6 harmful  17 harm   2.34
+  SE n= 17 | M_id: safe   0 harmful  10 harm   8.34 abstain  9 | F: safe   1 harmful  13 harm  27.57 | R: safe   3 harmful  14 harm  20.32
+  N  n= 49 | M_id: safe  45 harmful   0 harm   0.00 abstain  0 | F: safe  45 harmful   0 harm   0.00 | R: safe  47 harmful   0 harm   0.00
+abstentions: 20; on those persons the fixed rule's harm: mean 26.86, harmful in 15/20; an oracle could have completed safely in 9/20
+probing cost: 71/120 persons probed; median extra time 2.54 s; probe harm >= 0.5 N m in 18

@@ -1,0 +1,24 @@
+=== dev guarded grid (160 persons): 7680 jobs, 4 workers ===
+  400/7680 (252s)
+  800/7680 (475s)
+  1200/7680 (661s)
+  1600/7680 (837s)
+  2000/7680 (1034s)
+  2400/7680 (1219s)
+  2800/7680 (1407s)
+  3200/7680 (1582s)
+  3600/7680 (1774s)
+  4000/7680 (1957s)
+  4400/7680 (2159s)
+  4800/7680 (2360s)
+  5200/7680 (2535s)
+  5600/7680 (2723s)
+  6000/7680 (2853s)
+  6400/7680 (2967s)
+  6800/7680 (3072s)
+  7200/7680 (3182s)
+  7600/7680 (3281s)
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs
+MyoSuite:> Registering Myo Envs

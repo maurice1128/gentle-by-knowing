@@ -1,0 +1,8 @@
+{
+ "tau_std": 0.65,
+ "tau_norest": 0.6,
+ "norest_insample": {
+  "harmful": 37,
+  "safe": 241
+ }
+}

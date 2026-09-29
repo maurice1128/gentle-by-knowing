@@ -1,0 +1,3 @@
+round 24, eps 20: oracle safe 237, L safe 174, missed 63
+  unnecessary refusals 47; harmful where safe existed 7; incomplete where safe existed 9
+  L harmful where no safe strategy existed 18 (of 25 harmful)

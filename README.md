@@ -105,10 +105,16 @@ environment, "mm" = figures environment.
 The main-text statistics come from these files: guard first-attempt fractions and Spearman correlations
 from `round21/22/23/eval.txt`, M vs F from `round22/eval.txt`, ladder counts from `round24/eval.txt`,
 replication and degradations from `round25/eval.txt` and `round26/eval_*.txt`, audit numbers from
-`audit_claims.txt`, and the post hoc numbers from `sensitivity_threshold.txt` / `posthoc_baselines.txt`.
+`audit_claims.txt`, and the post hoc numbers from `sensitivity_threshold.txt`, `posthoc_baselines.txt` and the files in the table below.
 
-**One main-text statement has no dedicated script.** The decomposition of the round-24 gap to the oracle
-The round-24 gap decomposition (of the 63 safe completions L missed, 47 were unnecessary refusals; 18 of L's 25 harmful outcomes were persons with no safe strategy) is reproduced by `code/gap_round24.py` → `out/gap_round24.txt` (seconds, no simulation).
+Post hoc analyses added after the internal review (each reads stored results only, seconds to minutes, no simulation):
+
+| Paper item | Command | Output |
+|---|---|---|
+| Round-24 gap to the oracle (63 missed; 47 unnecessary refusals; 18 of 25 harmful with no safe strategy) | `python code/gap_round24.py` | `out/gap_round24.txt` |
+| Force guard did not trip in harmful first attempts (33–79% hard limit, 42–95% graded resistance) | `python code/posthoc_guard_trips.py` | `out/posthoc_guard_trips.txt` |
+| Contact force of harmful lifts vs ISO/TS 15066 lower-arm limit (160 N) | `python code/posthoc_iso_force.py` | `out/posthoc_iso_force.txt` |
+| Leave-one-out re-selection of the decline threshold tau (0.60: 378 safe / 73 harmful) | `python code/posthoc_loo_tau.py` | `out/posthoc_loo_tau.txt` |
 
 ### B. Full re-simulation (hours)
 

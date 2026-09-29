@@ -1,0 +1,69 @@
+POST HOC leave-one-out tau selection.  Training persons n=400; F = (0.03, -40.0, 0.1): safe 229, harmful 148; criterion: fewest harmful with safe >= 229 - 2.5% x 400 = 219
+  (check: L features identical to round25.KNN(use_rest=True): max |diff| = 0.00e+00; K = 25)
+
+=== L (round25.KNN, use_rest=True): training table (400 persons) ===
+    tau |  in-sample safe/harm/decl |   LOO safe/harm/decl
+   0.00 |     283      95       0  ok   |   268   104     0  ok
+   0.05 |     283      95       0  ok   |   268   104     0  ok
+   0.10 |     283      93       2  ok   |   268   101     3  ok
+   0.15 |     282      76      20  ok   |   267    88    17  ok
+   0.20 |     281      72      25  ok   |   267    80    26  ok
+   0.25 |     278      63      37  ok   |   266    69    38  ok
+   0.30 |     276      63      40  ok   |   265    69    39  ok
+   0.35 |     276      59      44  ok   |   265    67    43  ok
+   0.40 |     275      55      49  ok   |   264    63    48  ok
+   0.45 |     272      51      56  ok   |   263    59    53  ok
+   0.50 |     268      46      66  ok   |   258    54    63  ok
+   0.55 |     257      37      88  ok   |   248    47    81  ok
+   0.60 |     251      32     100  ok   |   239    38   102  ok
+   0.65 |     219      20     146  ok   |   213    26   144
+   0.70 |     210      12     165       |   206    18   162
+   0.75 |     197       9     182       |   187    14   187
+   0.80 |     175       7     206       |   173    11   204
+   0.85 |     154       1     233       |   151     3   234
+   0.90 |     149       0     239       |   147     1   240
+   0.95 |     142       0     246       |   141     0   247
+   1.00 |     136       0     252       |   136     0   252
+  selected tau (in-sample): 0.65  (train safe 219, harmful 20, declined 146)
+  selected tau (LOO): 0.6  (train safe 239, harmful 38, declined 102)
+
+=== FLAGKNN (flags + posture kNN, posthoc_baselines): training table (400 persons) ===
+    tau |  in-sample safe/harm/decl |   LOO safe/harm/decl
+   0.00 |     280      98       0  ok   |   271   103     0  ok
+   0.05 |     280      98       0  ok   |   271   103     0  ok
+   0.10 |     280      83      15  ok   |   269    90    15  ok
+   0.15 |     278      74      26  ok   |   268    79    27  ok
+   0.20 |     277      69      33  ok   |   268    74    33  ok
+   0.25 |     275      65      39  ok   |   265    69    41  ok
+   0.30 |     271      61      47  ok   |   264    64    47  ok
+   0.35 |     271      56      53  ok   |   264    61    51  ok
+   0.40 |     271      51      59  ok   |   264    54    59  ok
+   0.45 |     270      50      61  ok   |   263    54    60  ok
+   0.50 |     270      50      61  ok   |   262    53    63  ok
+   0.55 |     264      46      71  ok   |   259    52    68  ok
+   0.60 |     256      37      90  ok   |   246    46    88  ok
+   0.65 |     225      24     137  ok   |   219    27   139  ok
+   0.70 |     207      12     168       |   202    20   163
+   0.75 |     198      10     179       |   194    11   181
+   0.80 |     193       7     187       |   190     8   189
+   0.85 |     162       1     225       |   161     4   222
+   0.90 |     149       1     238       |   148     1   239
+   0.95 |     142       0     246       |   139     1   248
+   1.00 |     135       0     253       |   135     0   253
+  selected tau (in-sample): 0.65  (train safe 225, harmful 24, declined 137)
+  selected tau (LOO): 0.65  (train safe 219, harmful 27, declined 139)
+
+=== confirmation: 600 persons with full grids (r24 300, r25A 300), hard limits, record error 20 deg ===
+  arm                             safe  harmful  declined
+  F                                348      218         0
+  L(tau 0.65, prereg)              341       53       177
+  L(tau 0.6, LOO)                  378       73       117
+  FLAGKNN(tau 0.65, in-sample)     353       46       170
+  paired differences (per-person indicator; mean and 95% t CI):
+    L(tau 0.65, prereg)            - F: harmful -0.275 [-0.311, -0.239] | safe -0.012 [-0.043, +0.019]
+    L(tau 0.6, LOO)                - F: harmful -0.242 [-0.276, -0.207] | safe +0.050 [+0.021, +0.079]
+    FLAGKNN(tau 0.65, in-sample)   - F: harmful -0.287 [-0.323, -0.250] | safe +0.008 [-0.026, +0.043]
+    L(tau 0.6, LOO)                - L(tau 0.65, prereg): harmful +0.033 [+0.019, +0.048] | safe +0.062 [+0.042, +0.081]
+
+  confirmation sweep of L over tau (safe, harmful, declined) for reference:
+   0.4:(403, 99, 59) 0.45:(398, 94, 69) 0.5:(395, 87, 80) 0.55:(391, 78, 95) 0.6:(378, 73, 117) 0.65:(341, 53, 177) 0.7:(322, 39, 211) 0.75:(302, 31, 240) 0.8:(285, 20, 268) 0.85:(247, 8, 320)

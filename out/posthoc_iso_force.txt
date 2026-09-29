@@ -1,0 +1,37 @@
+POST HOC contact force vs ISO/TS 15066 Annex A (lower arms and wrist joints: 160 N quasi-static, 320 N transient).
+Episodes: 600 confirmation persons with full grids (r24 300, r25A 300), hard limits; harmful = robot-caused end-range load >= 0.5 N m.
+Force signal: peak_force = raw per-substep peak of the total normal contact force on the capsule (all contacts, noise-free; not 50-ms averaged).
+
+Fixed rule F (0.03, -40.0, 0.1):
+  harmful lifts: n=218  peak contact force median 33.7 N, p90 65.5 N, max 154.3 N (min 11.1)
+      below 160 N (quasi-static): 100.0% (218/218);  below 320 N (transient): 100.0% (218/218)
+      indicative nominal pressure (force / 19.6 cm^2): median 1.72, max 7.86 N/cm^2 -> below 180 N/cm^2: 100%; force needed to reach 180 N/cm^2 on this area: 3534 N
+      worst-case pressure if all force sat on the ISO test-probe face (1.96 cm^2): median 17.2, max 78.7 N/cm^2 -> below 180 N/cm^2: 100.0%
+  all lifts (context): n=600  peak contact force median 22.5 N, p90 45.6 N, max 154.3 N (min 0.0)
+      below 160 N (quasi-static): 100.0% (600/600);  below 320 N (transient): 100.0% (600/600)
+      indicative nominal pressure (force / 19.6 cm^2): median 1.15, max 7.86 N/cm^2 -> below 180 N/cm^2: 100%; force needed to reach 180 N/cm^2 on this area: 3534 N
+      worst-case pressure if all force sat on the ISO test-probe face (1.96 cm^2): median 11.5, max 78.7 N/cm^2 -> below 180 N/cm^2: 100.0%
+Learned policy L (tau 0.65), executed picks:
+  harmful lifts: n=53  peak contact force median 48.9 N, p90 62.7 N, max 92.5 N (min 11.7)
+      below 160 N (quasi-static): 100.0% (53/53);  below 320 N (transient): 100.0% (53/53)
+      indicative nominal pressure (force / 19.6 cm^2): median 2.49, max 4.71 N/cm^2 -> below 180 N/cm^2: 100%; force needed to reach 180 N/cm^2 on this area: 3534 N
+      worst-case pressure if all force sat on the ISO test-probe face (1.96 cm^2): median 24.9, max 47.2 N/cm^2 -> below 180 N/cm^2: 100.0%
+  all lifted persons (context): n=423  peak contact force median 30.3 N, p90 57.4 N, max 92.5 N (min 0.0)
+      below 160 N (quasi-static): 100.0% (423/423);  below 320 N (transient): 100.0% (423/423)
+      indicative nominal pressure (force / 19.6 cm^2): median 1.54, max 4.71 N/cm^2 -> below 180 N/cm^2: 100%; force needed to reach 180 N/cm^2 on this area: 3534 N
+      worst-case pressure if all force sat on the ISO test-probe face (1.96 cm^2): median 15.5, max 47.2 N/cm^2 -> below 180 N/cm^2: 100.0%
+All 48 strategies x all persons (context):
+  harmful episodes: n=11686  peak contact force median 43.7 N, p90 132.2 N, max 751.4 N (min 0.0)
+      below 160 N (quasi-static): 93.6% (10942/11686);  below 320 N (transient): 99.2% (11596/11686)
+      indicative nominal pressure (force / 19.6 cm^2): median 2.22, max 38.27 N/cm^2 -> below 180 N/cm^2: 100%; force needed to reach 180 N/cm^2 on this area: 3534 N
+      worst-case pressure if all force sat on the ISO test-probe face (1.96 cm^2): median 22.3, max 383.4 N/cm^2 -> below 180 N/cm^2: 99.5%
+  all episodes: n=28800  peak contact force median 30.4 N, p90 93.3 N, max 751.4 N (min 0.0)
+      below 160 N (quasi-static): 97.1% (27978/28800);  below 320 N (transient): 99.7% (28710/28800)
+      indicative nominal pressure (force / 19.6 cm^2): median 1.55, max 38.27 N/cm^2 -> below 180 N/cm^2: 100%; force needed to reach 180 N/cm^2 on this area: 3534 N
+      worst-case pressure if all force sat on the ISO test-probe face (1.96 cm^2): median 15.5, max 383.4 N/cm^2 -> below 180 N/cm^2: 99.8%
+
+Within F's harmful lifts: end-range load median 10.42 N m (max 94.81); Spearman(peak force, load) = 0.63
+
+Pressure: not computable from stored data (no contact area / patch is logged; the capsule-forearm contact is a
+MuJoCo point/line contact).  The nominal-pressure lines above use care_env6's own disc area (pi x 2.5^2 cm^2) and are
+indicative only; ISO pressure limits (180-190 N/cm^2) refer to 1-mm^2 peak pressure under a 1.4 x 1.4 cm probe.

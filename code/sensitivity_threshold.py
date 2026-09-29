@@ -79,23 +79,24 @@ def main():
     import matplotlib.pyplot as plt
     sty = {"F": ("#666666", "o", "fixed rule F"), "S_C(20)": ("#d98c1f", "^", "record threshold S"),
            "M(20)": ("#2060b0", "D", "body model M"), "L(20)": ("#2ca05a", "*", "learned policy L"),
-           "O": ("#000000", "P", "oracle O")}
-    fig, ax = plt.subplots(1, 2, figsize=(7.0, 2.6))
+           "O": ("#000000", "P", "perfect knowledge O")}
+    # Frontiers: full-width figure, canvas = printed size (180 mm), all text >= 8 pt, legend outside the data.
+    MM = 1 / 25.4
+    plt.rcParams.update({"font.size": 8, "pdf.fonttype": 42})
+    fig, ax = plt.subplots(1, 2, figsize=(180 * MM, 72 * MM), layout="constrained")
     for a, (c, m, lab) in sty.items():
         ax[0].plot(THRS, [b for b, _ in curves[a]], color=c, marker=m, ms=4, lw=1.2, label=lab)
         ax[1].plot(THRS, [s for _, s in curves[a]], color=c, marker=m, ms=4, lw=1.2, label=lab)
     for a_ in ax:
         a_.set_xscale("log"); a_.xaxis.set_major_locator(matplotlib.ticker.FixedLocator([0.25, 0.5, 1, 2.5, 5]))
         a_.xaxis.set_major_formatter(matplotlib.ticker.FixedFormatter(["0.25", "0.5", "1", "2.5", "5"])); a_.xaxis.set_minor_locator(matplotlib.ticker.NullLocator())
-        a_.set_xlabel("harm threshold (N·m)", fontsize=8); a_.tick_params(labelsize=7)
+        a_.set_xlabel("harm threshold (N·m)", fontsize=8); a_.tick_params(labelsize=8)
         a_.axvline(0.5, color="#bbbbbb", lw=0.8, ls=":"); a_.axvline(2.5, color="#bbbbbb", lw=0.8, ls=":")
         a_.spines[["top", "right"]].set_visible(False)
     ax[0].set_ylabel("harmful outcomes (of 300)", fontsize=8); ax[1].set_ylabel("safe completions (of 300)", fontsize=8)
-    ax[0].legend(fontsize=6.5, frameon=False, loc="upper right")
-    fig.tight_layout()
+    fig.legend(*ax[0].get_legend_handles_labels(), loc="outside upper center", ncol=5, fontsize=8, frameon=False)
     for ext in ("pdf", "png"):
-        fig.savefig(os.path.join(TOP, "out", "figs", f"figS_threshold.{ext}"), bbox_inches="tight", dpi=200)
-
+        fig.savefig(os.path.join(TOP, "out", "figs", f"figS_threshold.{ext}"), dpi=600)
 
 if __name__ == "__main__":
     main()

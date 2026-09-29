@@ -223,20 +223,26 @@ def main():
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    fig, ax = plt.subplots(figsize=(4.6, 3.4))
+    # Frontiers: single-column figure, canvas = printed size (85 mm wide), all text >= 8 pt, legend below the axes.
+    MM = 1 / 25.4
+    plt.rcParams.update({"font.size": 8, "pdf.fonttype": 42})
+    fig, ax = plt.subplots(figsize=(85 * MM, 118 * MM), layout="constrained")
     cols = ["#2ca05a", "#8c564b", "#9467bd", "#d98c1f", "#2060b0"]
+    shown = {"learned policy L (tau)": "learned policy L (τ sweep)", "type lookup (tau)": "type lookup (τ sweep)",
+             "flags + posture kNN (tau)": "flags + posture kNN (τ sweep)",
+             "record threshold S (deg)": "record threshold S (degree sweep)", "body model M (margin)": "body model M (margin sweep)",
+             "fixed rule F": "fixed rule F", "flag -> decline": "flag → decline (CAT)",
+             "L (preregistered)": "L (preregistered)", "oracle": "perfect knowledge O (ceiling)"}
     for (k, v), c in zip(curves.items(), cols):
-        ax.plot([a for a, _ in v], [b for _, b in v], "-o", color=c, ms=2.5, lw=1.1, label=k)
+        ax.plot([a for a, _ in v], [b for _, b in v], "-o", color=c, ms=2.5, lw=1.1, label=shown[k])
     mk = {"fixed rule F": ("#666666", "o"), "flag -> decline": ("#000000", "s"), "L (preregistered)": ("#2ca05a", "*"), "oracle": ("#000000", "P")}
     for k, v in pts.items():
-        ax.plot(*v, marker=mk[k][1], color=mk[k][0], ms=8 if k.startswith("L") else 6, ls="none", label=k)
+        ax.plot(*v, marker=mk[k][1], color=mk[k][0], ms=8 if k.startswith("L") else 6, ls="none", label=shown[k])
     ax.set_xlabel("safe completions (of 600)", fontsize=8); ax.set_ylabel("harmful outcomes (of 600)", fontsize=8)
-    ax.tick_params(labelsize=7); ax.spines[["top", "right"]].set_visible(False)
-    ax.legend(fontsize=6, frameon=False, loc="upper left")
-    fig.tight_layout()
+    ax.tick_params(labelsize=8); ax.spines[["top", "right"]].set_visible(False)
+    fig.legend(loc="outside lower center", ncol=1, fontsize=8, frameon=False, handletextpad=0.5)
     for ext in ("pdf", "png"):
-        fig.savefig(os.path.join(TOP, "out", "figs", f"figP_pareto.{ext}"), bbox_inches="tight", dpi=200)
-
+        fig.savefig(os.path.join(TOP, "out", "figs", f"figP_pareto.{ext}"), dpi=600)
 
 if __name__ == "__main__":
     main()

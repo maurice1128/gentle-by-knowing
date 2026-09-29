@@ -1,0 +1,65 @@
+POST HOC: reactive force guard in HARMFUL FIRST ATTEMPTS (first attempt = fixed-rule strategy (0.03, -40.0, 0.1), round-17 guard 50.10 N x m)
+harmful = harm of the guarded first-attempt episode >= 0.5 N m; (a) guard never tripped; (b) guard tripped (load >= 0.5 already reached at or before the trip step - see note)
+
+=== round21 hard (hard limit), n=120, harm = gross ===
+             guard      N missing harmful 1st    (a) no trip    (b) tripped |         alt harm (net)
+   x0.6 p95 ( 25.1 N)    120       0          43     14 ( 32.6%)     29 ( 67.4%) | no trip 14/43 (32.6%)
+   x0.8 p95 ( 33.4 N)    120       0          44     26 ( 59.1%)     18 ( 40.9%) | no trip 26/44 (59.1%)
+   x1.0 p95 ( 41.7 N)    120       0          45     32 ( 71.1%)     13 ( 28.9%) | no trip 32/45 (71.1%)
+   x1.2 p95 ( 50.1 N)    120       0          46     36 ( 78.3%)     10 ( 21.7%) | no trip 36/46 (78.3%)
+
+=== round22 hard (hard limit), n=120, harm = gross ===
+             guard      N missing harmful 1st    (a) no trip    (b) tripped |         alt harm (net)
+   x0.6 p95 ( 25.1 N)    120       0          43     16 ( 37.2%)     27 ( 62.8%) | no trip 16/43 (37.2%)
+   x0.8 p95 ( 33.4 N)    120       0          45     26 ( 57.8%)     19 ( 42.2%) | no trip 26/45 (57.8%)
+   x1.0 p95 ( 41.7 N)    120       0          46     33 ( 71.7%)     13 ( 28.3%) | no trip 33/46 (71.7%)
+   x1.2 p95 ( 50.1 N)    120       0          48     38 ( 79.2%)     10 ( 20.8%) | no trip 38/48 (79.2%)
+
+=== round22 soft6 (graded end-feel), n=120, harm = gross ===
+             guard      N missing harmful 1st    (a) no trip    (b) tripped |         alt harm (net)
+   x0.6 p95 ( 25.1 N)    120       0          51     23 ( 45.1%)     28 ( 54.9%) | no trip 23/51 (45.1%)
+   x0.8 p95 ( 33.4 N)    120       0          52     33 ( 63.5%)     19 ( 36.5%) | no trip 33/52 (63.5%)
+   x1.0 p95 ( 41.7 N)    120       0          54     40 ( 74.1%)     14 ( 25.9%) | no trip 40/54 (74.1%)
+   x1.2 p95 ( 50.1 N)    120       0          56     47 ( 83.9%)      9 ( 16.1%) | no trip 47/56 (83.9%)
+
+=== round22 soft12 (graded end-feel), n=120, harm = gross ===
+             guard      N missing harmful 1st    (a) no trip    (b) tripped |         alt harm (net)
+   x0.6 p95 ( 25.1 N)    120       0          66     28 ( 42.4%)     38 ( 57.6%) | no trip 28/66 (42.4%)
+   x0.8 p95 ( 33.4 N)    120       0          67     40 ( 59.7%)     27 ( 40.3%) | no trip 40/67 (59.7%)
+   x1.0 p95 ( 41.7 N)    120       0          67     53 ( 79.1%)     14 ( 20.9%) | no trip 53/67 (79.1%)
+   x1.2 p95 ( 50.1 N)    120       0          67     57 ( 85.1%)     10 ( 14.9%) | no trip 57/67 (85.1%)
+
+=== round23 soft12 (graded end-feel), n=120, harm = net ===
+             guard      N missing harmful 1st    (a) no trip    (b) tripped |       alt harm (gross)
+   x0.6 p95 ( 25.1 N)    120       0          57     29 ( 50.9%)     28 ( 49.1%) | no trip 30/59 (50.8%)
+   x0.8 p95 ( 33.4 N)    120       0          58     44 ( 75.9%)     14 ( 24.1%) | no trip 45/59 (76.3%)
+   x1.0 p95 ( 41.7 N)    120       0          58     54 ( 93.1%)      4 (  6.9%) | no trip 55/59 (93.2%)
+   x1.2 p95 ( 50.1 N)    120       0          58     55 ( 94.8%)      3 (  5.2%) | no trip 56/59 (94.9%)
+
+=== round23 soft20 (graded end-feel), n=120, harm = net ===
+             guard      N missing harmful 1st    (a) no trip    (b) tripped |       alt harm (gross)
+   x0.6 p95 ( 25.1 N)    120       0          58     34 ( 58.6%)     24 ( 41.4%) | no trip 34/64 (53.1%)
+   x0.8 p95 ( 33.4 N)    120       0          59     44 ( 74.6%)     15 ( 25.4%) | no trip 44/64 (68.8%)
+   x1.0 p95 ( 41.7 N)    120       0          60     51 ( 85.0%)      9 ( 15.0%) | no trip 52/64 (81.2%)
+   x1.2 p95 ( 50.1 N)    120       0          63     57 ( 90.5%)      6 (  9.5%) | no trip 58/64 (90.6%)
+
+=== round23 soft25 (graded end-feel), n=120, harm = net ===
+             guard      N missing harmful 1st    (a) no trip    (b) tripped |       alt harm (gross)
+   x0.6 p95 ( 25.1 N)    120       0          53     27 ( 50.9%)     26 ( 49.1%) | no trip 31/67 (46.3%)
+   x0.8 p95 ( 33.4 N)    120       0          57     41 ( 71.9%)     16 ( 28.1%) | no trip 46/67 (68.7%)
+   x1.0 p95 ( 41.7 N)    120       0          58     49 ( 84.5%)      9 ( 15.5%) | no trip 54/67 (80.6%)
+   x1.2 p95 ( 50.1 N)    120       0          60     55 ( 91.7%)      5 (  8.3%) | no trip 61/67 (91.0%)
+
+=== overall ranges of '(a) guard never tripped' among harmful first attempts (primary harm definition) ===
+  hard limit: 33% (round21 hard x0.6, 14/43) to 79% (round22 hard x1.2, 38/48) over 8 cells
+    round 21 only: 33% to 78%;  round 22 hard only: 37% to 79%
+  graded end-feel: 42% (round22 soft12 x0.6, 28/66) to 95% (round23 soft12 x1.2, 55/58) over 20 cells
+    round22 only: 42% to 85%
+    round23 only: 51% to 95%
+
+Timing note: no time series is stored (no trip time, no time the load crossed 0.5 N m).  shoulder_task.run stops the
+simulation in the control step in which the wrist force first exceeds the guard (break; no retraction simulated),
+and lim_sh / lim_el are peaks of a 50-ms moving average over the simulated samples only.  So every harmful TRIPPED
+episode had reached >= 0.5 N m before or within the 20-ms control step of the trip: category (b) = all tripped harmful
+first attempts.  How long before the trip the load crossed 0.5 N m is not stored.  A real retraction after the trip
+is not simulated, so (b) is if anything an underestimate of the load in those episodes.

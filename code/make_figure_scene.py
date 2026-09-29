@@ -70,16 +70,28 @@ def main():
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
         z = np.load(out)
-        fig, ax = plt.subplots(1, 2, figsize=(4.6, 2.0))
-        ax = [None] + list(ax)
-        ax[1].imshow(z["prox"]); ax[1].set_title(f"proximal: shoulder {z['ps']:+.0f}°, elbow {z['pe']:+.0f}°", fontsize=8)
-        ax[2].imshow(z["dist"]); ax[2].set_title(f"distal: shoulder {z['ds']:+.0f}°, elbow {z['de']:+.0f}°", fontsize=8)
-        for a in ax[1:]:
-            a.axis("off")
-        fig.tight_layout()
-        for ext in ("png", "pdf"):
-            fig.savefig(os.path.join(TOP, "out", "figs", f"fig1_task.{ext}"), bbox_inches="tight", dpi=200)
-        print("wrote fig1_task")
+        # Frontiers: single-column figure, canvas = printed size (88 mm wide), text >= 8 pt.
+        # Each 520x420 frame is printed 43 mm wide -> ~307 dpi at native resolution.
+        MM = 1 / 25.4
+        fw, gap, iw = 88.0, 2.0, 43.0
+        ih = iw * z["prox"].shape[0] / z["prox"].shape[1]
+        top = 9.0  # two 8-pt title lines
+        fh = ih + top + 0.5
+        sg = lambda v: f"{v:+.0f}".replace("-", "−")
+        titles = (f"proximal support:\nshoulder {sg(z['ps'])}°, elbow {sg(z['pe'])}°",
+                  f"distal support:\nshoulder {sg(z['ds'])}°, elbow {sg(z['de'])}°")
+        plt.rcParams.update({"font.size": 8, "pdf.fonttype": 42})
+        x0 = (fw - 2 * iw - gap) / 2
+        for ext, interp, dpi in (("pdf", "none", 300), ("png", "antialiased", 600)):
+            fig = plt.figure(figsize=(fw * MM, fh * MM))
+            for k, (key, tt) in enumerate(zip(("prox", "dist"), titles)):
+                a = fig.add_axes([(x0 + k * (iw + gap)) / fw, 0.5 / fh, iw / fw, ih / fh])
+                a.imshow(z[key], interpolation=interp)  # 'none' embeds the raw frame in the PDF
+                a.set_title(tt, fontsize=8, pad=2, linespacing=1.15)
+                a.axis("off")
+            fig.savefig(os.path.join(TOP, "out", "figs", f"fig1_task.{ext}"), dpi=dpi)
+            plt.close(fig)
+        print("wrote fig1_task", f"{fw:.0f} x {fh:.1f} mm")
         return
     prox, rp = lift_and_capture(-0.06, -40.0)
     dist, rd = lift_and_capture(0.12, -40.0)

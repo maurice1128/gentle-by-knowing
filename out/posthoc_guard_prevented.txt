@@ -1,0 +1,96 @@
+POST HOC: share of the fixed rule's harmful outcomes that the force guard PREVENTS (conditioned on the unguarded
+fixed rule F = (0.03, -40.0, 0.1), not on the guarded outcome).  harmful = harm >= 0.5 N m.  R(m) = whole guarded episode,
+all attempts of the round-17 switch order (as in each round's evaluate()).  No new simulation.
+  F harm   = harmful under unguarded F;  prev = of those, NOT harmful under R(m)  [share = prev / F harm]
+  -> safe  = prevented AND R completed (safe completion);  -> none = prevented, no attempt completed (aborted/incomplete)
+  intro    = NOT harmful under F but harmful under R(m)  (harm introduced by switching);  net = intro - prev
+  check    = harmful(F), harmful(R), safe(R) equal the round's eval.txt, and harmful(R) = F harm - prev + intro
+
+=== round21 hard (hard limit), n=120, harm = gross ===
+  F: harmful 46, safe 65   (eval.txt F safe 65, harmful 46: match)
+             guard F harm  prev   share  ->safe  ->none  intro   net R harm R safe  check  prevented: 1st attempt tripped / completed by attempt #2,#3
+   x0.6 p95 ( 25.1 N)     46     3    6.5%       0       3      0    -3     43     40     ok  3/3 / #2 0, #3 0
+   x0.8 p95 ( 33.4 N)     46     2    4.3%       1       1      0    -2     44     52     ok  2/2 / #2 0, #3 1
+   x1.0 p95 ( 41.7 N)     46     1    2.2%       1       0      0    -1     45     64     ok  1/1 / #2 0, #3 1
+   x1.2 p95 ( 50.1 N)     46     0    0.0%       0       0      0    +0     46     69     ok  0/0 / #2 0, #3 0
+
+=== round22 hard (hard limit), n=120, harm = gross ===
+  F: harmful 48, safe 70   (eval.txt F safe 70, harmful 48: match)
+             guard F harm  prev   share  ->safe  ->none  intro   net R harm R safe  check  prevented: 1st attempt tripped / completed by attempt #2,#3
+   x0.6 p95 ( 25.1 N)     48     5   10.4%       0       5      1    -4     44     44     ok  5/5 / #2 0, #3 0
+   x0.8 p95 ( 33.4 N)     48     3    6.2%       0       3      1    -2     46     50     ok  3/3 / #2 0, #3 0
+   x1.0 p95 ( 41.7 N)     48     1    2.1%       1       0      1    +0     48     65     ok  1/1 / #2 0, #3 1
+   x1.2 p95 ( 50.1 N)     48     0    0.0%       0       0      1    +1     49     71     ok  0/0 / #2 0, #3 0
+
+=== round22 soft6 (graded end-feel), n=120, harm = gross ===
+  F: harmful 56, safe 63   (eval.txt F safe 63, harmful 56: match)
+             guard F harm  prev   share  ->safe  ->none  intro   net R harm R safe  check  prevented: 1st attempt tripped / completed by attempt #2,#3
+   x0.6 p95 ( 25.1 N)     56     5    8.9%       0       5      0    -5     51     38     ok  5/5 / #2 0, #3 0
+   x0.8 p95 ( 33.4 N)     56     4    7.1%       0       4      0    -4     52     44     ok  4/4 / #2 0, #3 0
+   x1.0 p95 ( 41.7 N)     56     2    3.6%       2       0      0    -2     54     59     ok  2/2 / #2 0, #3 2
+   x1.2 p95 ( 50.1 N)     56     0    0.0%       0       0      0    +0     56     64     ok  0/0 / #2 0, #3 0
+
+=== round22 soft12 (graded end-feel), n=120, harm = gross ===
+  F: harmful 67, safe 52   (eval.txt F safe 52, harmful 67: match)
+             guard F harm  prev   share  ->safe  ->none  intro   net R harm R safe  check  prevented: 1st attempt tripped / completed by attempt #2,#3
+   x0.6 p95 ( 25.1 N)     67     1    1.5%       0       1      0    -1     66     34     ok  1/1 / #2 0, #3 0
+   x0.8 p95 ( 33.4 N)     67     0    0.0%       0       0      0    +0     67     39     ok  0/0 / #2 0, #3 0
+   x1.0 p95 ( 41.7 N)     67     0    0.0%       0       0      0    +0     67     50     ok  0/0 / #2 0, #3 0
+   x1.2 p95 ( 50.1 N)     67     0    0.0%       0       0      0    +0     67     53     ok  0/0 / #2 0, #3 0
+
+=== round23 soft12 (graded end-feel), n=120, harm = net ===
+  F: harmful 58, safe 57   (eval.txt F safe 57, harmful 58: match)
+             guard F harm  prev   share  ->safe  ->none  intro   net R harm R safe  check  prevented: 1st attempt tripped / completed by attempt #2,#3
+   x0.6 p95 ( 25.1 N)     58     1    1.7%       0       1      1    +0     58     32     ok  1/1 / #2 0, #3 0
+   x0.8 p95 ( 33.4 N)     58     0    0.0%       0       0      1    +1     59     39     ok  0/0 / #2 0, #3 0
+   x1.0 p95 ( 41.7 N)     58     0    0.0%       0       0      1    +1     59     56     ok  0/0 / #2 0, #3 0
+   x1.2 p95 ( 50.1 N)     58     0    0.0%       0       0      1    +1     59     58     ok  0/0 / #2 0, #3 0
+
+=== round23 soft20 (graded end-feel), n=120, harm = net ===
+  F: harmful 63, safe 52   (eval.txt F safe 52, harmful 63: match)
+             guard F harm  prev   share  ->safe  ->none  intro   net R harm R safe  check  prevented: 1st attempt tripped / completed by attempt #2,#3
+   x0.6 p95 ( 25.1 N)     63     5    7.9%       0       5      0    -5     58     27     ok  5/5 / #2 0, #3 0
+   x0.8 p95 ( 33.4 N)     63     3    4.8%       0       3      0    -3     60     34     ok  3/3 / #2 0, #3 0
+   x1.0 p95 ( 41.7 N)     63     3    4.8%       1       2      0    -3     60     52     ok  3/3 / #2 0, #3 1
+   x1.2 p95 ( 50.1 N)     63     0    0.0%       0       0      1    +1     64     53     ok  0/0 / #2 0, #3 0
+
+=== round23 soft25 (graded end-feel), n=120, harm = net ===
+  F: harmful 61, safe 51   (eval.txt F safe 51, harmful 61: match)
+             guard F harm  prev   share  ->safe  ->none  intro   net R harm R safe  check  prevented: 1st attempt tripped / completed by attempt #2,#3
+   x0.6 p95 ( 25.1 N)     61     8   13.1%       0       8      0    -8     53     25     ok  8/8 / #2 0, #3 0
+   x0.8 p95 ( 33.4 N)     61     3    4.9%       0       3      0    -3     58     32     ok  3/3 / #2 0, #3 0
+   x1.0 p95 ( 41.7 N)     61     3    4.9%       3       0      2    -1     60     53     ok  3/3 / #2 0, #3 3
+   x1.2 p95 ( 50.1 N)     61     1    1.6%       1       0      3    +2     63     53     ok  1/1 / #2 0, #3 1
+
+=== overall ranges: share of F's harmful outcomes prevented by the guard ===
+  hard limit (8 cells): 0.0% (round21 hard x1.2, 0/46) to 10.4% (round22 hard x0.6, 5/48)
+    pooled over cells (persons repeat across guard levels/conditions; descriptive only): prevented 15/376 (4.0%), of which safe completion 3, no completion 12; introduced 4
+    guard x0.6 p95: prevented 3/46, 5/48  -> safe 0, none 8; introduced 0, 1
+    guard x0.8 p95: prevented 2/46, 3/48  -> safe 1, none 4; introduced 0, 1
+    guard x1.0 p95: prevented 1/46, 1/48  -> safe 2, none 0; introduced 0, 1
+    guard x1.2 p95: prevented 0/46, 0/48  -> safe 0, none 0; introduced 0, 1
+  graded end-feel (20 cells): 0.0% (round22 soft12 x0.8, 0/67) to 13.1% (round23 soft25 x0.6, 8/61)
+    pooled over cells (persons repeat across guard levels/conditions; descriptive only): prevented 39/1220 (3.2%), of which safe completion 7, no completion 32; introduced 10
+    guard x0.6 p95: prevented 5/56, 1/67, 1/58, 5/63, 8/61  -> safe 0, none 20; introduced 0, 0, 1, 0, 0
+    guard x0.8 p95: prevented 4/56, 0/67, 0/58, 3/63, 3/61  -> safe 0, none 10; introduced 0, 0, 1, 0, 0
+    guard x1.0 p95: prevented 2/56, 0/67, 0/58, 3/63, 3/61  -> safe 6, none 2; introduced 0, 0, 1, 0, 2
+    guard x1.2 p95: prevented 0/56, 0/67, 0/58, 0/63, 1/61  -> safe 1, none 0; introduced 0, 0, 1, 1, 3
+
+cross-check against eval.txt (F and R harmful / safe counts) and harmful(R) identity: ALL MATCH
+
+=== lever-arm arithmetic: wrist-force change equivalent to 0.5 N m of joint-limit torque, F support site ===
+  model: shoulder-task body (humerus not welded), body variation of seed 104, settled rest angles from the stored
+  seed-104 rows: shoulder_elv 7.46 deg, elbow_flexion 42.52 deg; one mj_forward, no rollout.
+  contact: F offset +0.03 m -> aim 0.06 m distal of the radius_coll centre on the bone axis; surface point
+  3.0 cm below it along the lift direction (angle -40 deg).
+  joint                      point      |r| m  F@0.5Nm |  perp m  F@0.5Nm | along push m  F@0.5Nm
+  shoulder (shoulder_elv)    aim        0.447   1.12 N |   0.423   1.18 N |        0.083   6.01 N
+  shoulder (shoulder_elv)    surface    0.460   1.09 N |   0.444   1.13 N |        0.083   6.01 N
+  elbow (elbow_flexion)      aim        0.194   2.58 N |   0.191   2.62 N |        0.186   2.69 N
+  elbow (elbow_flexion)      surface    0.196   2.55 N |   0.192   2.60 N |        0.186   2.69 N
+  forearm + hand = ulna subtree, 29 bodies: mass 1.728 kg -> weight 16.95 N (g = 9.81 m/s^2; nominal body before seed variation 1.783 kg = 17.50 N)
+  (humerus alone 1.881 kg = 18.45 N)
+  => with |r| as the arm: 0.5 N m at the shoulder ~ 1.1 N at the wrist sensor, at the elbow ~ 2.6 N;
+     i.e. 7% / 15% of the forearm+hand weight (16.9 N); for comparison the guard on
+     the first attempt is 25.1 / 33.4 / 41.7 / 50.1 N at x0.6 / 0.8 / 1.0 / 1.2 p95.
+  bodies: ulna, radius, lunate, scaphoid, pisiform, triquetrum, capitate, trapezium, firstmc, proximal_thumb, distal_thumb, trapezoid, hamate, secondmc, proxph2, midph2, distph2, thirdmc, proxph3, midph3, distph3, fourthmc, proxph4, midph4, distph4, fifthmc, proxph5, midph5, distph5

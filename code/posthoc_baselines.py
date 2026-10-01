@@ -232,7 +232,7 @@ def main():
              "flags + posture kNN (tau)": "flags + posture kNN (τ sweep)",
              "record threshold S (deg)": "record threshold S (degree sweep)", "body model M (margin)": "body model M (margin sweep)",
              "fixed rule F": "fixed rule F", "flag -> decline": "flag → decline (CAT)",
-             "L (preregistered)": "L (preregistered)", "oracle": "perfect knowledge O (ceiling)"}
+             "L (preregistered)": "L (prespecified)", "oracle": "perfect knowledge O (ceiling)"}
     for (k, v), c in zip(curves.items(), cols):
         ax.plot([a for a, _ in v], [b for _, b in v], "-o", color=c, ms=2.5, lw=1.1, label=shown[k])
     mk = {"fixed rule F": ("#666666", "o"), "flag -> decline": ("#000000", "s"), "L (preregistered)": ("#2ca05a", "*"), "oracle": ("#000000", "P")}

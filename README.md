@@ -87,7 +87,7 @@ environment, "mm" = figures environment.
 
 | Paper item | Command | Env | Output | Runtime* |
 |---|---|---|---|---|
-| Fig. 1 (task; proximal vs distal lift) | `python code/make_figure_scene.py compose` (uses the cached `out/figs/fig1_frames.npz`) | mm | `out/figs/fig1_task.{pdf,png}` | 5 s |
+| Fig. 1 (A, B: proximal vs distal lift; C: joint loaded before the force guard trips) | `python code/make_figure_scene.py compose3` (uses the cached `out/figs/fig1_frames.npz` and the seed-2222 trace `out/videos/raw/guardF.{npz,json}`; the 71 MB trace is not in this repository: regenerate it with `python code/make_web_videos_gentle.py`, which re-simulates that one lift; panel C values are in `out/figs/fig1_panelC_numbers.txt`) | mm (+ myo for the trace) | `out/figs/fig1_task.{pdf,png}` | 5 s (+ about 1 min) |
 | Fig. 2 (force guard) | `python code/make_figure_forceguard.py` (parses `round21/eval.txt`, `round23/eval.txt`) | mm | `out/figs/figG_force_guard.{pdf,png}` | 15 s |
 | Fig. 3 (information ladder) and Table S4 | `python code/make_figure_ladder.py` (parses `round24/eval.txt`) | mm | `out/figs/figL_information_ladder.{pdf,png}` | 30 s |
 | Fig. 4 (robustness forest plot) and Table S5 | `python code/make_figure_forest.py` (parses round 24–26 eval logs) | mm | `out/figs/figR_robustness.{pdf,png}`, `out/forest_numbers.txt` | 30 s |

@@ -46,7 +46,7 @@ def main():
             fh.write(f"{lab}: vs F {f} | vs M {m}\n")
     # Frontiers: full-width figure, canvas = printed size (180 mm), all text >= 8 pt, legend outside the data.
     MM = 1 / 25.4
-    DISPLAY = {"Graded end-feel 20° (n=150)": "Graded resistance 20° (n=150)"}  # figure wording only
+    DISPLAY = {"Graded end-feel 20° (n=150)": "Graded resistance 20° (n=150)", "More, tighter contractures (n=250)": "Shifted population (n=250)"}  # figure wording only
     plt.rcParams.update({"font.size": 8, "pdf.fonttype": 42})
     fig, ax = plt.subplots(1, 2, figsize=(180 * MM, 92 * MM), sharey=True, layout="constrained",
                            gridspec_kw={"width_ratios": [1, 1]})

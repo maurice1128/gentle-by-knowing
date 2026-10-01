@@ -37,11 +37,11 @@ groups = [
     ("F", "F", "fixed rule, no knowledge", "#999999", "o", (-6, 0), "right"),
     ("CAT_half", "CAT½", "flag, half documented → decline", "#c7a76c", "s", (-6, 0), "right"),
     ("CAT", "CAT", "flag, complete → decline", "#8c6d31", "s", (6, 0), "left"),
-    ("S_C(20)", "S", "ranges ±20° + record threshold", "#e08a1e", "^", (-6, 0), "right"),
-    ("M(20)", "M", "ranges ±20° + body model", "#1f5fa8", "D", (-6, 3), "right"),
-    ("M(4)", "M 4°", "ranges ±4° + body model", "#6b9bd1", "D", (6, 3), "left"),
-    ("L(20)", "L", "ranges ±20° + learned policy", "#27ae60", "*", (-7, 0), "right"),
-    ("L(4)", "L 4°", "ranges ±4° + learned policy", "#7fd49a", "*", (3, -7), "left"),
+    ("S_C(20)", "S", "ranges, SD 20° error + record threshold", "#e08a1e", "^", (-6, 0), "right"),
+    ("M(20)", "M", "ranges, SD 20° error + body model", "#1f5fa8", "D", (-6, 3), "right"),
+    ("M(4)", "M 4°", "ranges, SD 4° error + body model", "#6b9bd1", "D", (6, 3), "left"),
+    ("L(20)", "L", "ranges, SD 20° error + learned policy", "#27ae60", "*", (-7, 0), "right"),
+    ("L(4)", "L 4°", "ranges, SD 4° error + learned policy", "#7fd49a", "*", (3, -7), "left"),
     ("O (perfect)", "O", "perfect knowledge (ceiling)", "#000000", "P", (0, 7), "center"),
 ]
 for key, let, lab, col, mk, off, ha in groups:

@@ -47,7 +47,7 @@ for (name, d), col in zip(series.items(), cols):
 ax[0].set_ylabel("harmful outcomes (of 120)"); ax[1].set_ylabel("safe completions (of 120)")
 for a in ax:
     a.set_ylim(0, 75)
-    a.set_xlabel("force guard (× 95th pct of harmless force)"); a.set_xticks(xs)
+    a.set_xlabel("force guard (× 95th percentile of harmless force)"); a.set_xticks(xs)
 ax[0].set_title("tightening the guard barely reduces harm", loc="left")
 ax[1].set_title("…but removes safe completions", loc="left")
 fig.legend(*ax[0].get_legend_handles_labels(), loc="outside upper center", ncol=4, frameon=False,

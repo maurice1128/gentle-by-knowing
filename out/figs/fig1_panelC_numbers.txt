@@ -1,0 +1,15 @@
+Fig. 1C numbers (seed 2222, fixed rule F = (offset 0.03 m, angle -40 deg, 0.10 m/s), unguarded;
+  restricted elbow, free range 4.2 deg (exact 4.203573728204695); shoulder unrestricted)
+  source: out/videos/raw/guardF.npz (S: per-2-ms substep signals) + guardF.json (run() dict) + selection.json
+  sampling dt = 0.002 s, control step = 10 substeps; episode length 1.840 s, done = True
+harm threshold                         : 0.5 N m (robot-caused joint-limit load, 50 ms moving average)
+tightest force guard (0.6x p95)        : 25.05 N (exact 25.049970076666188)
+load first >= 0.5 N m                  : t = 0.588 s (load 0.5034 N m; previous sample 0.4443)
+wrist/contact force first > guard      : t = 0.624 s (force 25.647 N; previous sample 24.163)
+guard would trip (end of control step) : t = 0.640 s (as in run(stop_force=...))
+lead of load over force crossing       : 36 ms; over guard trip: 52 ms
+load at force crossing                 : 1.3389 N m (peak so far 1.3457)
+load at guard trip                     : 1.2796 N m (peak so far 1.3457)
+peak load (= stored harm)              : 2.1390343323 N m at t = 0.950 s (elbow 2.1390343323, shoulder 0.0)
+peak wrist/contact force               : 35.310 N (run() peak_force 35.310)
+figure: 180 x 55.7 mm; min font size 8 pt; frames 46 mm wide (520 px -> 287 dpi)

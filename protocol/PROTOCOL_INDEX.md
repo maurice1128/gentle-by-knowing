@@ -56,4 +56,4 @@ hypotheses are inside that row.
 | **Round 20 not confirmed** (development only) | No protocol row. Lab log only (not released). The data are in `out/round20/`. |
 | **Round-25 analysis-code bug** (operator precedence in `set | {F} - {None}`). Fixed during the smoke test, before any confirmation data. | **Not in the protocol.** Recorded in the author's lab log (`notes/PHASE0_LOG.md` §10.76, not part of this release). |
 | **Confidence intervals use t = 2.1 for all n > 20** (conservative, about 6% wider than exact) | Not a protocol row. It is in the analysis code (`code/round14_recompute.py`, imported as `ci`). |
-| **Post hoc analyses** (threshold sweep, lifted-only comparisons, flags-only policy, type lookup, re-tuned M and S, trade-off curves) | Not preregistered. `code/sensitivity_threshold.py` and `code/posthoc_baselines.py` say so in their docstrings. |
+| **Post hoc analyses** (threshold sweep, lifted-only comparisons, flags-only policy, type lookup, re-tuned M and S, trade-off curves) | Not prespecified. `code/sensitivity_threshold.py` and `code/posthoc_baselines.py` say so in their docstrings. |

@@ -2,7 +2,7 @@
 
 Code, simulation outputs and the dated protocol for the manuscript
 
-> **Gentle by knowing: how much must a care robot know about a person to lift their arm safely?**
+> **Gentle by knowing: person knowledge, not force thresholds, protects restricted joints in simulated robotic arm lifting**
 > Mu-Hua (Maurice) Wang, National Yang Ming Chiao Tung University (NYCU), Taiwan.
 > Brief Research Report, manuscript in preparation (2026).
 
@@ -14,7 +14,7 @@ study only.** There are no human participants and no hardware. "Harm" is a **mec
 the peak 50-ms mean joint-limit constraint torque that the robot causes at the shoulder-elevation and
 elbow-flexion limits. It is not a measure of pain or injury.
 
-The study ran in confirmation rounds 17–26 plus a preregistered audit. Before each round's data were
+The study ran in confirmation rounds 17–26 plus a prespecified audit. Before each round's data were
 generated, its hypotheses, arms, thresholds and sample sizes were written into a dated protocol
 (`protocol/`). That protocol was kept locally and **not externally registered** (see
 `protocol/PROTOCOL_INDEX.md`). Every confirmation set uses new simulated persons (random seeds).
@@ -94,7 +94,7 @@ environment, "mm" = figures environment.
 | Fig. S1 (harm-threshold sweep, **post hoc**); threshold-free mean load (6.73 / 3.19 / 0.79 N·m) | `python code/sensitivity_threshold.py` | mm | `out/sensitivity_threshold.txt`, `out/figs/figS_threshold.{pdf,png}` | 30 s |
 | Fig. S2 (trade-off curves, **post hoc**); flags-only policy, type lookup, re-tuned M/S; lifted-only comparison (423 persons, 53 vs 95) | `python code/posthoc_baselines.py` | mm | `out/posthoc_baselines.txt`, `out/figs/figP_pareto.{pdf,png}` | 4 min |
 | Audit A1–A3 (fixed rule not a straw man; shear; stale records) | `python code/audit_claims.py > out/audit_claims.txt` | mm (verified; needs only numpy) | `out/audit_claims.txt` | 30 s |
-| Table S1 rows H17–H26: every preregistered test | `python code/roundNN.py eval > out/roundNN/eval.txt` for NN = 17, 18, 19, 21, 22, 23, 24, 25 | myo | `out/roundNN/eval.txt` | 3–30 s each |
+| Table S1 rows H17–H26: every prespecified test | `python code/roundNN.py eval > out/roundNN/eval.txt` for NN = 17, 18, 19, 21, 22, 23, 24, 25 | myo | `out/roundNN/eval.txt` | 3–30 s each |
 | Round 18R (frozen replication) | `WM_R18_REP=1 python code/round18.py eval > out/round18/eval_rep.txt` | myo | `out/round18/eval_rep.txt` | 30 s |
 | Round 19 rule on the development set (not evidence) | `WM_R19_DEV=1 python code/round19.py eval > out/round19/eval_DEVSET.txt` | myo | `out/round19/eval_DEVSET.txt` | 15 s |
 | Round 26 (misspecified test physics) | `WM_WORLD=S python code/round26.py eval > out/round26/eval_S.txt`; same with `WM_WORLD=V` → `eval_V.txt` | myo | `out/round26/eval_{S,V}.txt` | 5 s |
@@ -185,7 +185,7 @@ the training set of the learned policy L. No person was reused as confirmation d
 | Reuse of persons | The round-19 decline rule was developed on rounds 18 + 18R (160). The S threshold was locked on rounds 18, 18R and 19 (280). L was trained on rounds 18, 18R, 19 and 21 (400). The round-21 hypotheses were motivated by post hoc analyses of round 19. All later confirmation sets are new. |
 | Development only | The round-20 hybrid (body model + force guard + retries) did not improve on development data and was not confirmed. |
 | Analysis code | A round-25 set-precedence bug was fixed during the smoke test, before any confirmation data. Confidence intervals use t = 2.1 for all n > 20 (`round14_recompute.ci`), which is conservative (about 6% wider than exact). |
-| Post hoc | The threshold sweep, paired lifted-only comparisons, flags-only policy, type lookup, re-tuned M and S, and trade-off curves were not preregistered. |
+| Post hoc | The threshold sweep, paired lifted-only comparisons, flags-only policy, type lookup, re-tuned M and S, and trade-off curves were not prespecified. |
 
 `protocol/PROTOCOL_INDEX.md` gives the protocol line where each of these is recorded.
 
@@ -264,8 +264,6 @@ This was run on a scratch copy of this release (`code/` + `out/`). No simulation
 - Data, figures and protocol (`out/`, `figures/`, `protocol/`): **CC BY 4.0** (`out/LICENSE-DATA.md`).
 - MyoSuite and MuJoCo are third-party dependencies (Apache-2.0) and are not redistributed here.
 
-*Note to the author: these licenses are placeholders chosen for the release draft and may be changed
-before publishing.*
 
 ---
 
@@ -274,11 +272,10 @@ before publishing.*
 ```bibtex
 @misc{wang2026gentle,
   author       = {Wang, Mu-Hua (Maurice)},
-  title        = {Gentle by knowing: how much must a care robot know about a person to lift their arm safely?},
+  title        = {Gentle by knowing: person knowledge, not force thresholds, protects restricted joints in simulated robotic arm lifting},
   year         = {2026},
-  note         = {Manuscript in preparation. Code and data: https://github.com/<user>/gentle-by-knowing},
+  note         = {Manuscript in preparation. Code and data: https://github.com/maurice1128/gentle-by-knowing},
   institution  = {National Yang Ming Chiao Tung University}
 }
 ```
 
-Replace the URL (and add a Zenodo DOI) once the repository is published.

@@ -301,7 +301,7 @@ def compose():
         dr.text((x + 4, y), f"shoulder elevation \u0394 {dsh:+5.1f}\u00b0", fill=INK, font=fR)
         dr.text((x + 4 + 320, y), f"elbow flexion \u0394 {del_:+5.1f}\u00b0", fill=INK, font=fR)
         rise = 0.0 if si < 0 else (ep["S"][si, 5] - ep["S"][0, 5])
-        dr.text((x + 4, y + 30), "joint-angle change from the resting posture, measured in the simulation", fill=MUTED, font=fS)
+        dr.text((x + 4, y + 30), "joint-angle change from the settled posture, measured in the simulation", fill=MUTED, font=fS)
     ps, pe, ds, de = P["r"]["d_sh_deg"], P["r"]["d_el_deg"], D["r"]["d_sh_deg"], D["r"]["d_el_deg"]
     t1 = "Support near the elbow \u2192 shoulder moves" if abs(ps) > abs(pe) else "Support near the elbow"
     t2 = "Support near the wrist \u2192 elbow also bends" if abs(de) > abs(pe) else "Support near the wrist"
@@ -329,7 +329,7 @@ def compose():
     who = ("shoulder" if fs < 90 else "") + (" and " if fs < 90 and fe < 90 else "") + ("elbow" if fe < 90 else "")
     rng = ", ".join(([f"shoulder {fs:.1f}\u00b0"] if fs < 90 else []) + ([f"elbow {fe:.1f}\u00b0"] if fe < 90 else []))
     vmax = max(1.0, math.ceil(max(A["r"]["harm"], B["r"]["harm"]) * 1.15))
-    side_by_side("fixed_vs_learned", [A, B], ["Fixed lift (no knowledge)", "Learned policy (knows which joint is restricted)"],
+    side_by_side("fixed_vs_learned", [A, B], ["Fixed rule (no knowledge)", "Learned policy (knows which joint is restricted)"],
                  [fmt_strat(F), fmt_strat(tuple(sw["L"]))],
                  f"{sim}  |  simulated person seed {sw['seed']}: restricted {who} (free range {rng})  |  {slow}",
                  "Harm = torque the robot presses into the person's joint limit (not visible to the robot). Harmful if \u2265 0.5 N\u00b7m.",
@@ -350,7 +350,7 @@ def compose():
         cd.text((40, 380), "load pressed into joint limit: 0.00 N\u00b7m (no contact)", fill=INK, font=font(17, True))
         fs, fe = dc["free"]
         vmax = max(1.0, math.ceil(A["r"]["harm"] * 1.15))
-        side_by_side("learned_declines", [A, None], ["Fixed lift (no knowledge)", "Learned policy"],
+        side_by_side("learned_declines", [A, None], ["Fixed rule (no knowledge)", "Learned policy"],
                      [fmt_strat(F), "no lift attempted"],
                      f"{sim}  |  simulated person seed {dc['seed']}: shoulder {fs:.1f}\u00b0 and elbow {fe:.1f}\u00b0 free range  |  {slow}",
                      "Harm = torque the robot presses into the person's joint limit (not visible to the robot). Harmful if \u2265 0.5 N\u00b7m.",
@@ -391,7 +391,7 @@ def guard_video(sel):
     ax1.axhline(THR, color="#c42d23", ls=":", lw=1.2)
     ax1.text(0.99 * T, THR + 0.015 * ymax1, "harm threshold 0.5 N\u00b7m", color="#c42d23", fontsize=8, ha="right", bbox=dict(fc="white", ec="none", alpha=0.85, pad=1))
     ax2.axhline(thr, color="#235faa", ls="--", lw=1.2)
-    ax2.text(0.99 * T, thr + 0.012 * ymax2, f"force guard {thr:.1f} N\n(0.6\u00d7 p95 of harmless force)", color="#235faa", fontsize=8, ha="right", bbox=dict(fc="white", ec="none", alpha=0.85, pad=1))
+    ax2.text(0.99 * T, thr + 0.012 * ymax2, f"force guard {thr:.1f} N\n(0.6\u00d7 95th percentile of harmless force)", color="#235faa", fontsize=8, ha="right", bbox=dict(fc="white", ec="none", alpha=0.85, pad=1))
     l1, = ax1.plot([], [], color="#c42d23", lw=2, label="joint-limit load (robot-caused)")
     l2, = ax2.plot([], [], color="#235faa", lw=1.6, label="wrist force")
     for a in (ax1, ax2):
@@ -421,7 +421,7 @@ def guard_video(sel):
         rng = ", ".join(([f"shoulder {fs_:.1f}\u00b0"] if fs_ < 90 else []) + ([f"elbow {fe_:.1f}\u00b0"] if fe_ < 90 else []))
         dr.text((pad, 5), f"MuJoCo + MyoSuite myoArm simulation  |  seed {g['seed']}, restricted {rng}  |  {SLOW:g}\u00d7 speed  |  typical case",
                 fill=MUTED, font=fH)
-        dr.text((pad + 2, 28), "Fixed lift, unguarded", fill=INK, font=fT)
+        dr.text((pad + 2, 28), "Fixed rule, unguarded", fill=INK, font=fT)
         dr.text((pad + 2, 58), fmt_strat(F), fill=MUTED, font=fS)
         dr.text((2 * pad + PW + 2, 28), "Would a wrist-force guard stop it in time?", fill=INK, font=fT)
         dr.text((2 * pad + PW + 2, 58), f"load first \u2265 0.5 N\u00b7m at {t_load:.2f} s; guard would trip at {t_trip:.2f} s", fill=MUTED, font=fS)
@@ -432,7 +432,7 @@ def guard_video(sel):
         dr.text((pad + 8, top + PH - 30), f"joint-limit load {v:.2f} N\u00b7m   wrist force {0.0 if si < 0 else force[si]:.1f} N",
                 fill=(255, 120, 110) if v >= THR else (255, 255, 255), font=font(17, True), stroke_width=2, stroke_fill=(0, 0, 0))
         im.paste(plot, (2 * pad + PW, top))
-        dr.text((pad, Hv - 24), "Curves are the simulated signals of this episode. Guard check as in round 21: stop when the per-step peak wrist force exceeds the threshold.",
+        dr.text((pad, Hv - 24), "Curves are the simulated signals of this episode. Guard check as in the paper: stop when the per-step peak wrist force exceeds the threshold.",
                 fill=MUTED, font=font(13))
         out.append(im)
     plt.close(fig)

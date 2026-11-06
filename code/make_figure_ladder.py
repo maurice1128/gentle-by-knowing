@@ -1,8 +1,10 @@
-"""Information-ladder figure from out/round24/eval.txt (confirmation set, 300 new persons).
-Run with ../.venv_mm.  Numbers are parsed from the eval output, not typed in.
-Added 2026-09-30: one POST HOC marker (hollow) - Lflag = complete flags + settled posture, kNN K=25, tau 0.65
-(scripts/posthoc_baselines.py), on the same round-24 300 persons, parsed from the "r24 (n=300)" block of
-out/posthoc_baselines.txt (FLAGKNN line: safe 183, harmful 25, declined 81)."""
+"""Information-ladder figure (revised for Reviewer 1, comments 3 and 4), round-24 confirmation set, 300 new persons.
+A: harmful outcomes against safe completions; the line joins one learner (post hoc, rule held fixed, tau 0.65) across
+six levels of knowledge; separate markers are the prespecified controllers.
+B: what happens to all 300 persons, declines included.
+Controllers are parsed from out/round24/eval.txt, the learner rungs from out/posthoc_fixed_learner.json.
+Run with ../.venv_mm."""
+import json
 import os
 import re
 
@@ -18,50 +20,60 @@ for line in block.splitlines():
     m = re.match(r"\s+(\S.*?)\s+(\d+)\s+(\d+)\s+(\d+)\s+([\d.]+)\s*$", line)
     if m:
         rows[m.group(1)] = (int(m.group(2)), int(m.group(3)), int(m.group(4)))
+assert rows["L(20)"] == (174, 25, 91)
+FL = json.load(open(os.path.join(TOP, "out", "posthoc_fixed_learner.json")))
+RUNGS = [("posture", "posture only"), ("half flag", "half flag"), ("merged flag", "merged flag"),
+         ("joint flags", "joint flags"), ("ranges 20", "ranges ±20°"), ("ranges 4", "ranges ±4°")]
+learn = []
+for key, lab in RUNGS:
+    r = FL[f"{key}|uniform|tau|round 24"]
+    learn.append((lab, r["safe"], r["harmful"], r["declined"]))
 
-pb = open(os.path.join(TOP, "out", "posthoc_baselines.txt"), encoding="utf-8").read()
-pb = pb.split("=== confirmation persons: r24 (n=300) ===")[1].split("===")[0]
-m = re.search(r"^\s+FLAGKNN\(tau 0\.65\)\s+(\d+)\s+(\d+)\s+(\d+)\s*$", pb, re.M)
-LFLAG = (int(m.group(1)), int(m.group(2)), int(m.group(3)))
-assert rows["L(20)"] == (174, 25, 91) and LFLAG == (183, 25, 81), (rows["L(20)"], LFLAG)
-
-# Frontiers: single-column figure, canvas = printed size (85 mm wide), all text >= 8 pt.
 MM = 1 / 25.4
 plt.rcParams.update({"font.size": 8, "axes.titlesize": 8, "axes.labelsize": 8, "xtick.labelsize": 8,
                      "ytick.labelsize": 8, "legend.fontsize": 8, "axes.spines.top": False,
                      "axes.spines.right": False, "pdf.fonttype": 42})
-fig = plt.figure(figsize=(85 * MM, 145 * MM), layout="constrained")
-ax = fig.add_subplot()
-# key, letter used in the paper, legend text, colour, marker, letter offset (points), alignment
-groups = [
-    ("F", "F", "fixed rule, no knowledge", "#999999", "o", (-6, 0), "right"),
-    ("CAT_half", "CAT½", "flag, half documented → decline", "#c7a76c", "s", (-6, 0), "right"),
-    ("CAT", "CAT", "flag, complete → decline", "#8c6d31", "s", (6, 0), "left"),
-    ("S_C(20)", "S", "ranges, SD 20° error + record threshold", "#e08a1e", "^", (-6, 0), "right"),
-    ("M(20)", "M", "ranges, SD 20° error + body model", "#1f5fa8", "D", (-6, 3), "right"),
-    ("M(4)", "M 4°", "ranges, SD 4° error + body model", "#6b9bd1", "D", (6, 3), "left"),
-    ("L(20)", "L", "ranges, SD 20° error + learned policy", "#27ae60", "*", (-7, 0), "right"),
-    ("L(4)", "L 4°", "ranges, SD 4° error + learned policy", "#7fd49a", "*", (3, -7), "left"),
-    ("O (perfect)", "O", "perfect knowledge (ceiling)", "#000000", "P", (0, 7), "center"),
-]
-for key, let, lab, col, mk, off, ha in groups:
+fig, ax = plt.subplots(1, 2, figsize=(180 * MM, 105 * MM), layout="constrained", width_ratios=[1, 1.15])
+a = ax[0]
+groups = [("F", "F", "#999999", "o", (-6, 0), "right"), ("CAT_half", "CAT½", "#c7a76c", "s", (-6, 0), "right"),
+          ("CAT", "CAT", "#8c6d31", "s", (-6, 0), "right"), ("S_C(20)", "S", "#e08a1e", "^", (-6, 0), "right"),
+          ("M(20)", "M", "#1f5fa8", "D", (6, 3), "left"), ("L(20)", "L", "#27ae60", "*", (-7, 2), "right"),
+          ("O (perfect)", "O", "#000000", "P", (0, 7), "center")]
+for key, let, col, mk, off, ha in groups:
     s, h, d = rows[key]
-    ax.scatter(s, h, s=(110 if mk == "*" else 45), color=col, marker=mk, zorder=3, label=f"{let}: {lab}")
-    ax.annotate(let, (s, h), xytext=off, textcoords="offset points", ha=ha,
-                va=("bottom" if off[1] > 4 else "top" if off[1] < 0 else "center"), fontsize=8, zorder=4)
-    if key == "L(4)":        # post hoc marker, hollow, legend entry right after the L rungs
-        ax.scatter(LFLAG[0], LFLAG[1], s=45, marker="*", facecolors="none", edgecolors="#1e8449", linewidths=0.9,
-                   zorder=5, label="Lflag: complete flag + posture\n+ learned policy (post hoc)")
-        ax.annotate("Lflag", (LFLAG[0], LFLAG[1]), xytext=(5, 5), textcoords="offset points", ha="left",
-                    va="bottom", fontsize=8, zorder=4)
-ax.set_xlabel("safe completions (of 300)")
-ax.set_ylabel("harmful outcomes (of 300)")
-fig.suptitle("how much must the robot know about the person?", fontsize=8)
-ax.set_xlim(100, 248); ax.set_ylim(-8, 118)
-fig.legend(loc="outside lower center", ncol=1, frameon=False, handletextpad=0.4, borderaxespad=0.2)
-ax.annotate("", xy=(rows["O (perfect)"][0], 2), xytext=(rows["L(20)"][0], rows["L(20)"][1]),
-            arrowprops=dict(arrowstyle="->", color="#27ae60", lw=0.8, ls="--"))
-os.makedirs(os.path.join(TOP, "out", "figs"), exist_ok=True)
+    a.scatter(s, h, s=(110 if mk == "*" else 40), color=col, marker=mk, zorder=3)
+    a.annotate(let, (s, h), xytext=off, textcoords="offset points", ha=ha, va="center", fontsize=8, zorder=4)
+a.plot([x[1] for x in learn], [x[2] for x in learn], "-o", color="#7a3fa0", ms=3.5, lw=0.9, zorder=2,
+       label="one learner, knowledge varied (post hoc)")
+offs = {"posture only": (5, 3, "left"), "half flag": (5, 3, "left"), "merged flag": (10, -6, "left"), "joint flags": (6, 5, "left"),
+        "ranges ±20°": (-34, 17, "center"), "ranges ±4°": (7, -6, "left")}
+for lab, s, h, d in learn:
+    ox, oy, ha = offs[lab]
+    kw = dict(arrowprops=dict(arrowstyle="-", color="#7a3fa0", lw=0.5)) if lab == "ranges ±20°" else {}
+    a.annotate(lab, (s, h), xytext=(ox, oy), textcoords="offset points", fontsize=8, color="#7a3fa0", ha=ha, **kw)
+a.set_xlabel("safe completions (of 300)"); a.set_ylabel("harmful outcomes (of 300)")
+a.set_xlim(70, 262); a.set_ylim(-8, 118)
+a.legend(loc="upper center", bbox_to_anchor=(0.5, -0.11), frameon=False)
+
+b = ax[1]
+names = [("F", rows["F"]), ("CAT½", rows["CAT_half"]), ("CAT", rows["CAT"]), ("S", rows["S_C(20)"]), ("M", rows["M(20)"]),
+         ("L", rows["L(20)"])] + [(lab, (s, h, d)) for lab, s, h, d in learn] + [("O", rows["O (perfect)"])]
+parts = [("safe completion", "#4caf72"), ("harmful", "#c0392b"), ("failed lift", "#bbbbbb"), ("declined", "#9cc3e6")]
+y = list(range(len(names)))[::-1]
+for yy, (n, (s, h, d)) in zip(y, names):
+    left = 0
+    for val, (lab, col) in zip((s, h, 300 - s - h - d, d), parts):
+        b.barh(yy, val, left=left, color=col, height=0.74, label=lab if yy == y[0] else None)
+        if val >= 25:
+            b.text(left + val / 2, yy, str(val), ha="center", va="center", fontsize=8)
+        left += val
+b.set_yticks(y); b.set_yticklabels([n for n, _ in names]); b.set_xlim(0, 300); b.set_xlabel("persons (of 300)")
+b.spines["left"].set_visible(False); b.tick_params(axis="y", length=0)
+b.legend(loc="upper center", bbox_to_anchor=(0.5, -0.11), ncol=4, frameon=False, handlelength=1, columnspacing=1)
+for x, lab in zip(ax, "AB"):
+    x.text(-0.13, 1.02, lab, transform=x.transAxes, ha="left", va="bottom", fontsize=10,
+           fontweight="bold").set_in_layout(False)
+fig.get_layout_engine().set(rect=(0, 0, 1, 0.96))
 for ext in ("png", "pdf"):
     fig.savefig(os.path.join(TOP, "out", "figs", f"figL_information_ladder.{ext}"), dpi=600)
-print("wrote figL_information_ladder", rows)
+print("wrote figL_information_ladder", learn)

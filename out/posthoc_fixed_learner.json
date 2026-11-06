@@ -1,0 +1,1410 @@
+{
+"posture|uniform|tau|round 24": {
+"tau": 0.65,
+"safe": 84,
+"harmful": 52,
+"declined": 162,
+"failed": 2
+},
+"posture|uniform|tau|all 600": {
+"tau": 0.65,
+"safe": 169,
+"harmful": 96,
+"declined": 322,
+"failed": 13
+},
+"posture|uniform|tuned|round 24": {
+"tau": 0.6,
+"safe": 137,
+"harmful": 84,
+"declined": 74,
+"failed": 5
+},
+"posture|uniform|tuned|all 600": {
+"tau": 0.6,
+"safe": 273,
+"harmful": 163,
+"declined": 143,
+"failed": 21
+},
+"posture|uniform|LOO-tuned|round 24": {
+"tau": 0.5,
+"safe": 162,
+"harmful": 110,
+"declined": 22,
+"failed": 6
+},
+"posture|uniform|LOO-tuned|all 600": {
+"tau": 0.5,
+"safe": 322,
+"harmful": 202,
+"declined": 49,
+"failed": 27
+},
+"posture|uniform|curve600": [
+[
+348,
+222
+],
+[
+348,
+222
+],
+[
+348,
+222
+],
+[
+348,
+222
+],
+[
+348,
+222
+],
+[
+348,
+222
+],
+[
+348,
+222
+],
+[
+348,
+222
+],
+[
+348,
+222
+],
+[
+336,
+207
+],
+[
+322,
+202
+],
+[
+301,
+186
+],
+[
+273,
+163
+],
+[
+169,
+96
+],
+[
+82,
+51
+],
+[
+41,
+29
+],
+[
+10,
+10
+],
+[
+0,
+0
+],
+[
+0,
+0
+],
+[
+0,
+0
+],
+[
+0,
+0
+]
+],
+"half flag|uniform|tau|round 24": {
+"tau": 0.65,
+"safe": 111,
+"harmful": 42,
+"declined": 145,
+"failed": 2
+},
+"half flag|uniform|tau|all 600": {
+"tau": 0.65,
+"safe": 227,
+"harmful": 75,
+"declined": 287,
+"failed": 11
+},
+"half flag|uniform|tuned|round 24": {
+"tau": 0.55,
+"safe": 156,
+"harmful": 66,
+"declined": 73,
+"failed": 5
+},
+"half flag|uniform|tuned|all 600": {
+"tau": 0.55,
+"safe": 311,
+"harmful": 122,
+"declined": 145,
+"failed": 22
+},
+"half flag|uniform|LOO-tuned|round 24": {
+"tau": 0.45,
+"safe": 171,
+"harmful": 79,
+"declined": 45,
+"failed": 5
+},
+"half flag|uniform|LOO-tuned|all 600": {
+"tau": 0.45,
+"safe": 339,
+"harmful": 157,
+"declined": 81,
+"failed": 23
+},
+"half flag|uniform|curve600": [
+[
+354,
+221
+],
+[
+354,
+221
+],
+[
+354,
+221
+],
+[
+354,
+221
+],
+[
+354,
+221
+],
+[
+354,
+221
+],
+[
+354,
+215
+],
+[
+350,
+202
+],
+[
+347,
+184
+],
+[
+339,
+157
+],
+[
+332,
+140
+],
+[
+311,
+122
+],
+[
+287,
+105
+],
+[
+227,
+75
+],
+[
+188,
+58
+],
+[
+144,
+44
+],
+[
+84,
+34
+],
+[
+15,
+7
+],
+[
+0,
+1
+],
+[
+0,
+0
+],
+[
+0,
+0
+]
+],
+"half flag|shortcut|tau|round 24": {
+"tau": 0.65,
+"safe": 143,
+"harmful": 53,
+"declined": 95,
+"failed": 9
+},
+"half flag|shortcut|tau|all 600": {
+"tau": 0.65,
+"safe": 285,
+"harmful": 103,
+"declined": 185,
+"failed": 27
+},
+"half flag|shortcut|tuned|round 24": {
+"tau": 0.45,
+"safe": 167,
+"harmful": 79,
+"declined": 45,
+"failed": 9
+},
+"half flag|shortcut|tuned|all 600": {
+"tau": 0.45,
+"safe": 330,
+"harmful": 158,
+"declined": 81,
+"failed": 31
+},
+"half flag|shortcut|LOO-tuned|round 24": {
+"tau": 0.4,
+"safe": 170,
+"harmful": 93,
+"declined": 28,
+"failed": 9
+},
+"half flag|shortcut|LOO-tuned|all 600": {
+"tau": 0.4,
+"safe": 338,
+"harmful": 185,
+"declined": 46,
+"failed": 31
+},
+"half flag|shortcut|curve600": [
+[
+345,
+222
+],
+[
+345,
+222
+],
+[
+345,
+222
+],
+[
+345,
+222
+],
+[
+345,
+222
+],
+[
+345,
+222
+],
+[
+345,
+216
+],
+[
+341,
+203
+],
+[
+338,
+185
+],
+[
+330,
+158
+],
+[
+323,
+141
+],
+[
+306,
+126
+],
+[
+294,
+112
+],
+[
+285,
+103
+],
+[
+285,
+103
+],
+[
+285,
+103
+],
+[
+285,
+103
+],
+[
+285,
+103
+],
+[
+285,
+103
+],
+[
+285,
+103
+],
+[
+285,
+103
+]
+],
+"merged flag|uniform|tau|round 24": {
+"tau": 0.65,
+"safe": 122,
+"harmful": 2,
+"declined": 174,
+"failed": 2
+},
+"merged flag|uniform|tau|all 600": {
+"tau": 0.65,
+"safe": 239,
+"harmful": 4,
+"declined": 348,
+"failed": 9
+},
+"merged flag|uniform|tuned|round 24": {
+"tau": 0.4,
+"safe": 167,
+"harmful": 73,
+"declined": 56,
+"failed": 4
+},
+"merged flag|uniform|tuned|all 600": {
+"tau": 0.4,
+"safe": 339,
+"harmful": 134,
+"declined": 107,
+"failed": 20
+},
+"merged flag|uniform|LOO-tuned|round 24": {
+"tau": 0.3,
+"safe": 174,
+"harmful": 104,
+"declined": 18,
+"failed": 4
+},
+"merged flag|uniform|LOO-tuned|all 600": {
+"tau": 0.3,
+"safe": 354,
+"harmful": 190,
+"declined": 36,
+"failed": 20
+},
+"merged flag|uniform|curve600": [
+[
+358,
+222
+],
+[
+358,
+222
+],
+[
+358,
+222
+],
+[
+358,
+222
+],
+[
+358,
+222
+],
+[
+354,
+209
+],
+[
+354,
+190
+],
+[
+348,
+169
+],
+[
+339,
+134
+],
+[
+317,
+81
+],
+[
+300,
+61
+],
+[
+280,
+42
+],
+[
+267,
+26
+],
+[
+239,
+4
+],
+[
+230,
+1
+],
+[
+230,
+0
+],
+[
+230,
+0
+],
+[
+226,
+0
+],
+[
+225,
+0
+],
+[
+225,
+0
+],
+[
+187,
+0
+]
+],
+"merged flag|shortcut|tau|round 24": {
+"tau": 0.65,
+"safe": 117,
+"harmful": 2,
+"declined": 172,
+"failed": 9
+},
+"merged flag|shortcut|tau|all 600": {
+"tau": 0.65,
+"safe": 230,
+"harmful": 4,
+"declined": 344,
+"failed": 22
+},
+"merged flag|shortcut|tuned|round 24": {
+"tau": 0.4,
+"safe": 160,
+"harmful": 73,
+"declined": 56,
+"failed": 11
+},
+"merged flag|shortcut|tuned|all 600": {
+"tau": 0.4,
+"safe": 326,
+"harmful": 134,
+"declined": 107,
+"failed": 33
+},
+"merged flag|shortcut|LOO-tuned|round 24": {
+"tau": 0.25,
+"safe": 167,
+"harmful": 112,
+"declined": 10,
+"failed": 11
+},
+"merged flag|shortcut|LOO-tuned|all 600": {
+"tau": 0.25,
+"safe": 341,
+"harmful": 209,
+"declined": 17,
+"failed": 33
+},
+"merged flag|shortcut|curve600": [
+[
+345,
+222
+],
+[
+345,
+222
+],
+[
+345,
+222
+],
+[
+345,
+222
+],
+[
+345,
+222
+],
+[
+341,
+209
+],
+[
+341,
+190
+],
+[
+335,
+169
+],
+[
+326,
+134
+],
+[
+304,
+81
+],
+[
+287,
+61
+],
+[
+267,
+42
+],
+[
+254,
+26
+],
+[
+230,
+4
+],
+[
+224,
+1
+],
+[
+224,
+0
+],
+[
+224,
+0
+],
+[
+224,
+0
+],
+[
+224,
+0
+],
+[
+224,
+0
+],
+[
+224,
+0
+]
+],
+"joint flags|uniform|tau|round 24": {
+"tau": 0.65,
+"safe": 190,
+"harmful": 25,
+"declined": 81,
+"failed": 4
+},
+"joint flags|uniform|tau|all 600": {
+"tau": 0.65,
+"safe": 366,
+"harmful": 46,
+"declined": 170,
+"failed": 18
+},
+"joint flags|uniform|tuned|round 24": {
+"tau": 0.65,
+"safe": 190,
+"harmful": 25,
+"declined": 81,
+"failed": 4
+},
+"joint flags|uniform|tuned|all 600": {
+"tau": 0.65,
+"safe": 366,
+"harmful": 46,
+"declined": 170,
+"failed": 18
+},
+"joint flags|uniform|LOO-tuned|round 24": {
+"tau": 0.65,
+"safe": 190,
+"harmful": 25,
+"declined": 81,
+"failed": 4
+},
+"joint flags|uniform|LOO-tuned|all 600": {
+"tau": 0.65,
+"safe": 366,
+"harmful": 46,
+"declined": 170,
+"failed": 18
+},
+"joint flags|uniform|curve600": [
+[
+428,
+147
+],
+[
+428,
+147
+],
+[
+427,
+135
+],
+[
+427,
+118
+],
+[
+427,
+108
+],
+[
+425,
+103
+],
+[
+421,
+101
+],
+[
+418,
+94
+],
+[
+416,
+92
+],
+[
+415,
+91
+],
+[
+414,
+86
+],
+[
+408,
+80
+],
+[
+394,
+69
+],
+[
+366,
+46
+],
+[
+344,
+32
+],
+[
+324,
+25
+],
+[
+314,
+18
+],
+[
+271,
+10
+],
+[
+248,
+5
+],
+[
+231,
+1
+],
+[
+187,
+0
+]
+],
+"joint flags|shortcut|tau|round 24": {
+"tau": 0.65,
+"safe": 183,
+"harmful": 25,
+"declined": 81,
+"failed": 11
+},
+"joint flags|shortcut|tau|all 600": {
+"tau": 0.65,
+"safe": 353,
+"harmful": 46,
+"declined": 170,
+"failed": 31
+},
+"joint flags|shortcut|tuned|round 24": {
+"tau": 0.65,
+"safe": 183,
+"harmful": 25,
+"declined": 81,
+"failed": 11
+},
+"joint flags|shortcut|tuned|all 600": {
+"tau": 0.65,
+"safe": 353,
+"harmful": 46,
+"declined": 170,
+"failed": 31
+},
+"joint flags|shortcut|LOO-tuned|round 24": {
+"tau": 0.65,
+"safe": 183,
+"harmful": 25,
+"declined": 81,
+"failed": 11
+},
+"joint flags|shortcut|LOO-tuned|all 600": {
+"tau": 0.65,
+"safe": 353,
+"harmful": 46,
+"declined": 170,
+"failed": 31
+},
+"joint flags|shortcut|curve600": [
+[
+415,
+147
+],
+[
+415,
+147
+],
+[
+414,
+135
+],
+[
+414,
+118
+],
+[
+414,
+108
+],
+[
+412,
+103
+],
+[
+408,
+101
+],
+[
+405,
+94
+],
+[
+403,
+92
+],
+[
+402,
+91
+],
+[
+401,
+86
+],
+[
+395,
+80
+],
+[
+381,
+69
+],
+[
+353,
+46
+],
+[
+334,
+32
+],
+[
+318,
+25
+],
+[
+308,
+18
+],
+[
+265,
+10
+],
+[
+246,
+5
+],
+[
+230,
+1
+],
+[
+224,
+0
+]
+],
+"ranges 20|uniform|tau|round 24": {
+"tau": 0.65,
+"safe": 181,
+"harmful": 25,
+"declined": 91,
+"failed": 3
+},
+"ranges 20|uniform|tau|all 600": {
+"tau": 0.65,
+"safe": 354,
+"harmful": 53,
+"declined": 177,
+"failed": 16
+},
+"ranges 20|uniform|tuned|round 24": {
+"tau": 0.7,
+"safe": 173,
+"harmful": 22,
+"declined": 102,
+"failed": 3
+},
+"ranges 20|uniform|tuned|all 600": {
+"tau": 0.7,
+"safe": 335,
+"harmful": 39,
+"declined": 211,
+"failed": 15
+},
+"ranges 20|uniform|LOO-tuned|round 24": {
+"tau": 0.65,
+"safe": 181,
+"harmful": 25,
+"declined": 91,
+"failed": 3
+},
+"ranges 20|uniform|LOO-tuned|all 600": {
+"tau": 0.65,
+"safe": 354,
+"harmful": 53,
+"declined": 177,
+"failed": 16
+},
+"ranges 20|uniform|curve600": [
+[
+421,
+153
+],
+[
+421,
+153
+],
+[
+421,
+153
+],
+[
+421,
+131
+],
+[
+421,
+118
+],
+[
+420,
+111
+],
+[
+418,
+105
+],
+[
+416,
+101
+],
+[
+416,
+99
+],
+[
+411,
+94
+],
+[
+408,
+87
+],
+[
+404,
+78
+],
+[
+391,
+73
+],
+[
+354,
+53
+],
+[
+335,
+39
+],
+[
+314,
+31
+],
+[
+296,
+20
+],
+[
+253,
+8
+],
+[
+238,
+5
+],
+[
+228,
+3
+],
+[
+188,
+0
+]
+],
+"ranges 20|shortcut|tau|round 24": {
+"tau": 0.65,
+"safe": 174,
+"harmful": 25,
+"declined": 91,
+"failed": 10
+},
+"ranges 20|shortcut|tau|all 600": {
+"tau": 0.65,
+"safe": 341,
+"harmful": 53,
+"declined": 177,
+"failed": 29
+},
+"ranges 20|shortcut|tuned|round 24": {
+"tau": 0.65,
+"safe": 174,
+"harmful": 25,
+"declined": 91,
+"failed": 10
+},
+"ranges 20|shortcut|tuned|all 600": {
+"tau": 0.65,
+"safe": 341,
+"harmful": 53,
+"declined": 177,
+"failed": 29
+},
+"ranges 20|shortcut|LOO-tuned|round 24": {
+"tau": 0.6,
+"safe": 189,
+"harmful": 37,
+"declined": 62,
+"failed": 12
+},
+"ranges 20|shortcut|LOO-tuned|all 600": {
+"tau": 0.6,
+"safe": 378,
+"harmful": 73,
+"declined": 117,
+"failed": 32
+},
+"ranges 20|shortcut|curve600": [
+[
+408,
+153
+],
+[
+408,
+153
+],
+[
+408,
+153
+],
+[
+408,
+131
+],
+[
+408,
+118
+],
+[
+407,
+111
+],
+[
+405,
+105
+],
+[
+403,
+101
+],
+[
+403,
+99
+],
+[
+398,
+94
+],
+[
+395,
+87
+],
+[
+391,
+78
+],
+[
+378,
+73
+],
+[
+341,
+53
+],
+[
+322,
+39
+],
+[
+302,
+31
+],
+[
+285,
+20
+],
+[
+247,
+8
+],
+[
+232,
+5
+],
+[
+227,
+3
+],
+[
+225,
+0
+]
+],
+"ranges 4|uniform|tau|round 24": {
+"tau": 0.65,
+"safe": 191,
+"harmful": 20,
+"declined": 85,
+"failed": 4
+},
+"ranges 4|uniform|tau|all 600": {
+"tau": 0.65,
+"safe": 374,
+"harmful": 39,
+"declined": 167,
+"failed": 20
+},
+"ranges 4|uniform|tuned|round 24": {
+"tau": 0.7,
+"safe": 181,
+"harmful": 19,
+"declined": 96,
+"failed": 4
+},
+"ranges 4|uniform|tuned|all 600": {
+"tau": 0.7,
+"safe": 357,
+"harmful": 28,
+"declined": 196,
+"failed": 19
+},
+"ranges 4|uniform|LOO-tuned|round 24": {
+"tau": 0.65,
+"safe": 191,
+"harmful": 20,
+"declined": 85,
+"failed": 4
+},
+"ranges 4|uniform|LOO-tuned|all 600": {
+"tau": 0.65,
+"safe": 374,
+"harmful": 39,
+"declined": 167,
+"failed": 20
+},
+"ranges 4|uniform|curve600": [
+[
+427,
+149
+],
+[
+427,
+143
+],
+[
+427,
+134
+],
+[
+426,
+114
+],
+[
+426,
+111
+],
+[
+423,
+102
+],
+[
+420,
+99
+],
+[
+419,
+95
+],
+[
+415,
+91
+],
+[
+415,
+88
+],
+[
+415,
+86
+],
+[
+411,
+80
+],
+[
+404,
+66
+],
+[
+374,
+39
+],
+[
+357,
+28
+],
+[
+342,
+20
+],
+[
+322,
+15
+],
+[
+270,
+7
+],
+[
+245,
+3
+],
+[
+235,
+0
+],
+[
+188,
+0
+]
+],
+"ranges 4|shortcut|tau|round 24": {
+"tau": 0.65,
+"safe": 184,
+"harmful": 20,
+"declined": 85,
+"failed": 11
+},
+"ranges 4|shortcut|tau|all 600": {
+"tau": 0.65,
+"safe": 361,
+"harmful": 39,
+"declined": 167,
+"failed": 33
+},
+"ranges 4|shortcut|tuned|round 24": {
+"tau": 0.65,
+"safe": 184,
+"harmful": 20,
+"declined": 85,
+"failed": 11
+},
+"ranges 4|shortcut|tuned|all 600": {
+"tau": 0.65,
+"safe": 361,
+"harmful": 39,
+"declined": 167,
+"failed": 33
+},
+"ranges 4|shortcut|LOO-tuned|round 24": {
+"tau": 0.65,
+"safe": 184,
+"harmful": 20,
+"declined": 85,
+"failed": 11
+},
+"ranges 4|shortcut|LOO-tuned|all 600": {
+"tau": 0.65,
+"safe": 361,
+"harmful": 39,
+"declined": 167,
+"failed": 33
+},
+"ranges 4|shortcut|curve600": [
+[
+414,
+149
+],
+[
+414,
+143
+],
+[
+414,
+134
+],
+[
+413,
+114
+],
+[
+413,
+111
+],
+[
+410,
+102
+],
+[
+407,
+99
+],
+[
+406,
+95
+],
+[
+402,
+91
+],
+[
+402,
+88
+],
+[
+402,
+86
+],
+[
+398,
+80
+],
+[
+391,
+66
+],
+[
+361,
+39
+],
+[
+344,
+28
+],
+[
+329,
+20
+],
+[
+309,
+15
+],
+[
+259,
+7
+],
+[
+239,
+3
+],
+[
+229,
+0
+],
+[
+224,
+0
+]
+]
+}

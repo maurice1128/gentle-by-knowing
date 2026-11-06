@@ -71,6 +71,12 @@ def main():
     fig.legend(*ax[0].get_legend_handles_labels(), loc="outside upper center", ncol=2, fontsize=8, frameon=False)
     ax[0].set_xlim(-0.65, 0.05); ax[1].set_xlim(-0.15, 0.15)
     ax[0].set_xticks([-0.6, -0.4, -0.2, 0.0]); ax[1].set_xticks([-0.1, 0.0, 0.1])
+    # panel labels, outside the axes (kept out of the layout so geometry is unchanged); A sits at the figure's
+    # left edge, above the row labels, B just left of the second panel
+    from matplotlib.transforms import blended_transform_factory
+    for a, lab, x, tr in ((ax[0], "A", 0.005, blended_transform_factory(fig.transFigure, ax[0].transAxes)),
+                          (ax[1], "B", -0.12, ax[1].transAxes)):
+        a.text(x, 1.04, lab, transform=tr, ha="left", va="bottom", fontsize=10, fontweight="bold").set_in_layout(False)
     for ext in ("pdf", "png"):
         fig.savefig(os.path.join(O, "figs", f"figR_robustness.{ext}"), dpi=600)
     print(open(os.path.join(O, "forest_numbers.txt"), encoding="utf-8").read())

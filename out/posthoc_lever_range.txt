@@ -1,0 +1,21 @@
+contact force equivalent to 0.5 N m; 600 persons x 8 sites [-0.06, -0.03, 0.0, 0.03, 0.06, 0.09, 0.12, 0.15]; lift direction of F (angle -40.0)
+shoulder: full lever arm, N: min 0.80  p5 0.87  median 1.05  p95 1.30  max 1.35
+shoulder: along the lift direction, N: min 4.66  p5 5.33  median 8.21  p95 108.71  max 38675.71
+   site -0.06: along-lift force median 8.93 N, full-arm median 1.29 N
+   site -0.03: along-lift force median 8.68 N, full-arm median 1.22 N
+   site +0.00: along-lift force median 8.49 N, full-arm median 1.15 N
+   site +0.03: along-lift force median 8.28 N, full-arm median 1.08 N
+   site +0.06: along-lift force median 8.07 N, full-arm median 1.03 N
+   site +0.09: along-lift force median 7.86 N, full-arm median 0.97 N
+   site +0.12: along-lift force median 7.69 N, full-arm median 0.92 N
+   site +0.15: along-lift force median 7.52 N, full-arm median 0.88 N
+elbow: full lever arm, N: min 1.50  p5 1.58  median 2.30  p95 4.59  max 4.83
+elbow: along the lift direction, N: min 1.61  p5 1.64  median 2.63  p95 5.10  max 6.76
+   site -0.06: along-lift force median 5.08 N, full-arm median 4.56 N
+   site -0.03: along-lift force median 3.92 N, full-arm median 3.62 N
+   site +0.00: along-lift force median 3.19 N, full-arm median 2.99 N
+   site +0.03: along-lift force median 2.69 N, full-arm median 2.54 N
+   site +0.06: along-lift force median 2.32 N, full-arm median 2.21 N
+   site +0.09: along-lift force median 2.05 N, full-arm median 1.96 N
+   site +0.12: along-lift force median 1.83 N, full-arm median 1.75 N
+   site +0.15: along-lift force median 1.65 N, full-arm median 1.59 N

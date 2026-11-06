@@ -21,7 +21,7 @@ import numpy as np
 import mujoco
 import shoulder_task as st
 
-W, H = 520, 420
+W, H = 1300, 1050   # 2026-10-05: was 520x420 (287 dpi at 46 mm); same 26:21 aspect -> same framing, ~718 dpi
 SEED = 104
 
 
@@ -60,14 +60,24 @@ _R = {}
 
 def snap(e):
     if "r" not in _R:
+        e.m.vis.global_.offwidth = max(int(e.m.vis.global_.offwidth), W)    # offscreen buffer must fit the frame
+        e.m.vis.global_.offheight = max(int(e.m.vis.global_.offheight), H)
         _R["r"] = mujoco.Renderer(e.m, H, W)
         cam = mujoco.MjvCamera()
         cam.type = mujoco.mjtCamera.mjCAMERA_FREE
         cam.lookat[:] = np.array(e.d.geom_xpos[e._fg])
         cam.azimuth, cam.elevation, cam.distance = 180.0, -15.0, 0.75
         _R["cam"] = cam
+    # 2026-10-05: on this Windows/GLFW machine the first few offscreen renders of a scene are sometimes
+    # returned with a spurious red tint (driver warm-up glitch, not resolution dependent).  Re-render the
+    # same state until 6 consecutive frames are bit-identical (and at least 12 renders), then use that frame.
     _R["r"].update_scene(e.d, _R["cam"])
-    return _R["r"].render().copy()
+    imgs = []
+    for _ in range(60):
+        imgs.append(_R["r"].render().copy())
+        if len(imgs) >= 12 and all((im == imgs[-1]).all() for im in imgs[-6:]):
+            return imgs[-1]
+    raise RuntimeError("offscreen render did not stabilise")
 
 
 def compose3(frames_npz):

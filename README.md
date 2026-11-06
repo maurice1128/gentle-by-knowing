@@ -2,7 +2,7 @@
 
 Code, simulation outputs and the dated protocol for the manuscript
 
-> **Gentle by knowing: person knowledge, not force thresholds, protects restricted joints in simulated robotic arm lifting**
+> **Gentle by knowing: person knowledge protects restricted joints better than force thresholds in simulated robotic arm lifting**
 > Mu-Hua (Maurice) Wang, National Yang Ming Chiao Tung University (NYCU), Taiwan.
 > Brief Research Report, manuscript in preparation (2026).
 
@@ -114,6 +114,9 @@ Post hoc analyses added after the internal review (each reads stored results onl
 | Round-24 gap to the oracle (63 missed; 47 unnecessary refusals; 18 of 25 harmful with no safe strategy) | `python code/gap_round24.py` | `out/gap_round24.txt` |
 | Force guard did not trip in harmful first attempts (33–79% hard limit, 42–95% graded resistance) | `python code/posthoc_guard_trips.py` | `out/posthoc_guard_trips.txt` |
 | Contact force of harmful lifts vs ISO/TS 15066 lower-arm limit (160 N) | `python code/posthoc_iso_force.py` | `out/posthoc_iso_force.txt` |
+| Added during peer review: guard mean load, non-superiority test, load by attempt (Fig. 2, Table S7) | `python code/posthoc_guard_load.py`, then `python code/make_figure_forceguard.py` |
+| Added during peer review: one learner at every level of knowledge, rule held fixed (Fig. 3, Table S8) | `python code/posthoc_fixed_learner.py`, then `python code/make_figure_ladder.py` |
+| Added during peer review: contact force equivalent to 0.5 N·m over 600 persons and 8 sites (one kinematic pass per person, no rollout, simulation environment) | `python code/posthoc_lever_range.py` |
 | Leave-one-out re-selection of the decline threshold tau (0.60: 378 safe / 73 harmful) | `python code/posthoc_loo_tau.py` | `out/posthoc_loo_tau.txt` |
 
 ### B. Full re-simulation (hours)
@@ -272,7 +275,7 @@ This was run on a scratch copy of this release (`code/` + `out/`). No simulation
 ```bibtex
 @misc{wang2026gentle,
   author       = {Wang, Mu-Hua (Maurice)},
-  title        = {Gentle by knowing: person knowledge, not force thresholds, protects restricted joints in simulated robotic arm lifting},
+  title        = {Gentle by knowing: person knowledge protects restricted joints better than force thresholds in simulated robotic arm lifting},
   year         = {2026},
   note         = {Manuscript in preparation. Code and data: https://github.com/maurice1128/gentle-by-knowing},
   institution  = {National Yang Ming Chiao Tung University}

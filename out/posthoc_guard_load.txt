@@ -1,0 +1,49 @@
+POST HOC guard analysis.  Non-superiority: lower bound of R - F harmful rate above -0.05.
+
+=== round21 hard, threshold 0.5, n=120 (H21-3); F harmful 46, safe 65, mean load 5.43
+  R x0.6p95: harmful 43 safe 40 load 3.77 | dH -0.025 [-0.055, +0.005] inconclusive | dS -0.208 [-0.298, -0.119] | dLoad -1.65 [-3.71, +0.40] (-30%) | by attempt n/mean 120/2.83 72/4.05 69/1.12 | peak in a later attempt: 14 count check ok
+  R x0.8p95: harmful 44 safe 52 load 4.16 | dH -0.017 [-0.041, +0.008] non-superiority shown | dS -0.108 [-0.186, -0.031] | dLoad -1.27 [-3.20, +0.66] (-23%) | by attempt n/mean 120/3.30 52/4.18 49/3.89 | peak in a later attempt: 22 count check ok
+  R x1.0p95: harmful 45 safe 64 load 4.41 | dH -0.008 [-0.026, +0.009] non-superiority shown | dS -0.008 [-0.067, +0.050] | dLoad -1.01 [-2.92, +0.89] (-19%) | by attempt n/mean 120/3.45 36/6.66 32/7.06 | peak in a later attempt: 19 count check ok
+  R x1.2p95: harmful 46 safe 69 load 4.98 | dH +0.000 [+0.000, +0.000] non-superiority shown | dS +0.033 [-0.001, +0.068] | dLoad -0.45 [-2.17, +1.28] (-8%) | by attempt n/mean 120/3.86 26/11.79 21/11.31 | peak in a later attempt: 17 count check ok
+
+=== round22 soft6, threshold 0.5, n=120 (H22-1); F harmful 56, safe 63, mean load 4.64
+  R x0.6p95: harmful 51 safe 38 load 2.16 | dH -0.042 [-0.080, -0.003] inconclusive | dS -0.208 [-0.287, -0.130] | dLoad -2.48 [-4.19, -0.78] (-54%) | by attempt n/mean 120/1.70 63/2.65 61/0.47 | peak in a later attempt: 8 count check ok
+  R x0.8p95: harmful 52 safe 44 load 3.45 | dH -0.033 [-0.068, +0.001] inconclusive | dS -0.158 [-0.229, -0.088] | dLoad -1.19 [-2.54, +0.15] (-26%) | by attempt n/mean 120/2.71 48/3.84 46/3.61 | peak in a later attempt: 19 count check ok
+  R x1.0p95: harmful 54 safe 59 load 4.07 | dH -0.017 [-0.041, +0.008] non-superiority shown | dS -0.033 [-0.089, +0.022] | dLoad -0.57 [-1.76, +0.62] (-12%) | by attempt n/mean 120/3.10 35/7.30 32/5.69 | peak in a later attempt: 20 count check ok
+  R x1.2p95: harmful 56 safe 64 load 4.87 | dH +0.000 [+0.000, +0.000] non-superiority shown | dS +0.008 [-0.009, +0.026] | dLoad +0.23 [-0.91, +1.38] (+5%) | by attempt n/mean 120/3.75 22/15.07 19/11.70 | peak in a later attempt: 18 count check ok
+
+=== round22 soft12, threshold 0.5, n=120 (H22-1); F harmful 67, safe 52, mean load 5.67
+  R x0.6p95: harmful 66 safe 34 load 2.90 | dH -0.008 [-0.026, +0.009] non-superiority shown | dS -0.150 [-0.219, -0.081] | dLoad -2.77 [-4.39, -1.16] (-49%) | by attempt n/mean 120/2.53 64/3.35 63/1.58 | peak in a later attempt: 9 count check ok
+  R x0.8p95: harmful 67 safe 39 load 4.09 | dH +0.000 [+0.000, +0.000] non-superiority shown | dS -0.108 [-0.168, -0.049] | dLoad -1.59 [-2.97, -0.20] (-28%) | by attempt n/mean 120/3.48 49/5.11 48/4.94 | peak in a later attempt: 23 count check ok
+  R x1.0p95: harmful 67 safe 50 load 5.09 | dH +0.000 [+0.000, +0.000] non-superiority shown | dS -0.017 [-0.052, +0.018] | dLoad -0.59 [-1.64, +0.47] (-10%) | by attempt n/mean 120/4.31 32/9.70 31/8.15 | peak in a later attempt: 19 count check ok
+  R x1.2p95: harmful 67 safe 53 load 5.73 | dH +0.000 [+0.000, +0.000] non-superiority shown | dS +0.008 [-0.009, +0.026] | dLoad +0.06 [-0.81, +0.92] (+1%) | by attempt n/mean 120/4.77 25/14.70 24/10.96 | peak in a later attempt: 18 count check ok
+
+=== round23 soft12, threshold 0.5, n=120 (Fig. 2); F harmful 58, safe 57, mean load 3.54
+  R x0.6p95: harmful 58 safe 32 load 2.45 | dH +0.000 [-0.025, +0.025] non-superiority shown | dS -0.208 [-0.290, -0.126] | dLoad -1.09 [-2.12, -0.05] (-31%) | by attempt n/mean 120/2.11 66/2.32 64/1.30 | peak in a later attempt: 9 count check ok
+  R x0.8p95: harmful 59 safe 39 load 3.36 | dH +0.008 [-0.009, +0.026] non-superiority shown | dS -0.150 [-0.223, -0.077] | dLoad -0.19 [-1.13, +0.76] (-5%) | by attempt n/mean 120/2.73 48/4.89 45/3.86 | peak in a later attempt: 18 count check ok
+  R x1.0p95: harmful 59 safe 56 load 3.68 | dH +0.008 [-0.009, +0.026] non-superiority shown | dS -0.008 [-0.039, +0.022] | dLoad +0.14 [-0.75, +1.03] (+4%) | by attempt n/mean 120/3.01 26/8.65 23/6.54 | peak in a later attempt: 12 count check ok
+  R x1.2p95: harmful 59 safe 58 load 4.32 | dH +0.008 [-0.009, +0.026] non-superiority shown | dS +0.008 [-0.009, +0.026] | dLoad +0.78 [-0.13, +1.69] (+22%) | by attempt n/mean 120/3.25 18/15.50 15/10.97 | peak in a later attempt: 12 count check ok
+
+=== round23 soft20, threshold 0.5, n=120 (H23-1); F harmful 63, safe 52, mean load 3.65
+  R x0.6p95: harmful 58 safe 27 load 2.61 | dH -0.042 [-0.080, -0.003] inconclusive | dS -0.208 [-0.290, -0.126] | dLoad -1.05 [-1.89, -0.21] (-29%) | by attempt n/mean 120/2.13 72/2.47 71/1.41 | peak in a later attempt: 15 count check ok
+  R x0.8p95: harmful 60 safe 34 load 3.31 | dH -0.025 [-0.055, +0.005] inconclusive | dS -0.150 [-0.223, -0.077] | dLoad -0.35 [-1.10, +0.41] (-9%) | by attempt n/mean 120/2.69 58/3.78 55/3.82 | peak in a later attempt: 19 count check ok
+  R x1.0p95: harmful 60 safe 52 load 3.90 | dH -0.025 [-0.055, +0.005] inconclusive | dS +0.000 [-0.035, +0.035] | dLoad +0.25 [-0.51, +1.00] (+7%) | by attempt n/mean 120/2.98 41/7.41 39/6.12 | peak in a later attempt: 26 count check ok
+  R x1.2p95: harmful 64 safe 53 load 4.55 | dH +0.008 [-0.009, +0.026] non-superiority shown | dS +0.008 [-0.009, +0.026] | dLoad +0.90 [+0.07, +1.73] (+25%) | by attempt n/mean 120/3.24 28/12.09 26/8.24 | peak in a later attempt: 20 count check ok
+
+=== round23 soft25, threshold 0.5, n=120 (H23-1); F harmful 61, safe 51, mean load 2.92
+  R x0.6p95: harmful 53 safe 25 load 1.86 | dH -0.067 [-0.115, -0.019] inconclusive | dS -0.217 [-0.300, -0.134] | dLoad -1.06 [-1.77, -0.35] (-36%) | by attempt n/mean 120/1.61 78/1.53 77/0.65 | peak in a later attempt: 15 count check ok
+  R x0.8p95: harmful 58 safe 32 load 3.08 | dH -0.025 [-0.055, +0.005] inconclusive | dS -0.158 [-0.233, -0.084] | dLoad +0.16 [-0.60, +0.92] (+5%) | by attempt n/mean 120/2.24 63/3.21 61/3.37 | peak in a later attempt: 25 count check ok
+  R x1.0p95: harmful 60 safe 53 load 3.69 | dH -0.008 [-0.048, +0.031] non-superiority shown | dS +0.017 [-0.026, +0.060] | dLoad +0.77 [-0.01, +1.55] (+26%) | by attempt n/mean 120/2.50 46/6.08 45/5.36 | peak in a later attempt: 28 count check ok
+  R x1.2p95: harmful 63 safe 53 load 4.23 | dH +0.017 [-0.018, +0.052] non-superiority shown | dS +0.017 [-0.008, +0.041] | dLoad +1.31 [+0.41, +2.22] (+45%) | by attempt n/mean 120/2.63 33/10.91 32/7.75 | peak in a later attempt: 27 count check ok
+
+=== round23 soft20, threshold 2.5, n=120 (H23-1); F harmful 42, safe 71, mean load 3.65
+  R x0.6p95: harmful 34 safe 39 load 2.61 | dH -0.067 [-0.121, -0.013] inconclusive | dS -0.267 [-0.355, -0.178] | dLoad -1.05 [-1.89, -0.21] (-29%) | by attempt n/mean 120/2.13 72/2.47 71/1.41 | peak in a later attempt: 15
+  R x0.8p95: harmful 40 safe 49 load 3.31 | dH -0.017 [-0.066, +0.033] inconclusive | dS -0.183 [-0.262, -0.105] | dLoad -0.35 [-1.10, +0.41] (-9%) | by attempt n/mean 120/2.69 58/3.78 55/3.82 | peak in a later attempt: 19
+  R x1.0p95: harmful 40 safe 71 load 3.90 | dH -0.017 [-0.052, +0.018] inconclusive | dS +0.000 [-0.043, +0.043] | dLoad +0.25 [-0.51, +1.00] (+7%) | by attempt n/mean 120/2.98 41/7.41 39/6.12 | peak in a later attempt: 26
+  R x1.2p95: harmful 44 safe 72 load 4.55 | dH +0.017 [-0.008, +0.041] non-superiority shown | dS +0.008 [-0.009, +0.026] | dLoad +0.90 [+0.07, +1.73] (+25%) | by attempt n/mean 120/3.24 28/12.09 26/8.24 | peak in a later attempt: 20
+
+=== round23 soft25, threshold 2.5, n=120 (H23-1); F harmful 34, safe 76, mean load 2.92
+  R x0.6p95: harmful 29 safe 38 load 1.86 | dH -0.042 [-0.087, +0.004] inconclusive | dS -0.317 [-0.410, -0.224] | dLoad -1.06 [-1.77, -0.35] (-36%) | by attempt n/mean 120/1.61 78/1.53 77/0.65 | peak in a later attempt: 15
+  R x0.8p95: harmful 35 safe 50 load 3.08 | dH +0.008 [-0.031, +0.048] non-superiority shown | dS -0.217 [-0.303, -0.130] | dLoad +0.16 [-0.60, +0.92] (+5%) | by attempt n/mean 120/2.24 63/3.21 61/3.37 | peak in a later attempt: 25
+  R x1.0p95: harmful 35 safe 75 load 3.69 | dH +0.008 [-0.009, +0.026] non-superiority shown | dS -0.008 [-0.039, +0.022] | dLoad +0.77 [-0.01, +1.55] (+26%) | by attempt n/mean 120/2.50 46/6.08 45/5.36 | peak in a later attempt: 28
+  R x1.2p95: harmful 37 safe 76 load 4.23 | dH +0.025 [-0.005, +0.055] non-superiority shown | dS +0.000 [-0.025, +0.025] | dLoad +1.31 [+0.41, +2.22] (+45%) | by attempt n/mean 120/2.63 33/10.91 32/7.75 | peak in a later attempt: 27
